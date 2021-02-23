@@ -1,5 +1,5 @@
 # Grupp10_project
-Create database
+Create database with the name Millhouse and then run this SQL-file
 
 DROP TABLE IF EXISTS comments; 
 DROP TABLE IF EXISTS posts; 
