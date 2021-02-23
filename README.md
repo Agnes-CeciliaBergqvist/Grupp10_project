@@ -1,4 +1,5 @@
 # Grupp10_project
+Create database
 
 DROP TABLE IF EXISTS comments; 
 DROP TABLE IF EXISTS posts; 
