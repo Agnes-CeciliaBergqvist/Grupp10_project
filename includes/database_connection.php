@@ -1,7 +1,3 @@
 <?php 
-  $dsn = "mysql:host=localhost;dbname=Millhouse";
-  $user="root";
-  $password = "";
-  
-  $pdo = new PDO($dsn, $user, $password);
+  $db = new PDO('mysql:host=localhost;dbname=Millhouse;charset=utf8mb4', 'root', '');
 ?>

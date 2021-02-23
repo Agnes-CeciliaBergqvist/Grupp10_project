@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<form name="User" method="POST" action="handleLogin.php" align="center">
+<form name="User" method="POST" action="../includes/handleLogin.php" align="center">
 
 <h3 align="center">Enter Login Details</h3>
  Username:<br>

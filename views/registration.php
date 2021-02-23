@@ -1,4 +1,5 @@
-<form method="POST" action="handleRegistration.php">
+
+<form method="POST" action="../includes/handleRegistration.php">
 <input type="text" placeholder="Insert Username..." name="username"><br>
 <input type="email" placeholder="Insert E-mail" name="email"><br>
 <input type="password" placeholder="Insert Password..." name="password"><br>
