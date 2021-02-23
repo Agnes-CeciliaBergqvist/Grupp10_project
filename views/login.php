@@ -19,7 +19,8 @@
 <br><br>
 <input type="submit" name="loginBtn" value="login">
 
-</form>
+</form> 
 
+Not a member ? <a href="registration.php"> Register now!<a>
 </body>
 </html>

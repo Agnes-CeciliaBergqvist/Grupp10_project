@@ -7,13 +7,15 @@ $msg ="";
 if(isset($_POST['loginBtn'])){
     $username= trim($_POST['username']);
     $password = trim($_POST['password']);
-    $md5_password = md5($password);
+    $salt1 = "AfGsaö2";
+    $salt2 = "Hasf&6";
+    $krypt_password = md5($salt2.$password.$salt1);
     if($username != "" & $password != "" ){
         try {
             $query = "SELECT * FROM `users` where `username` =:username_IN and `password`=:password_IN";
             $stmt = $db->prepare($query);
             $stmt->bindParam('username_IN', $username);
-            $stmt->bindValue('password_IN', $md5_password);
+            $stmt->bindValue('password_IN', $krypt_password);
             $stmt->execute();
             $count = $stmt->rowCount();
             $row   = $stmt->fetch();
