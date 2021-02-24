@@ -26,6 +26,7 @@ if(isset($_POST['loginBtn'])){
                     $_SESSION['sess_user_id'] = $row['id'];
                     $_SESSION['sess_user_name'] = $row['username'];
                     $_SESSION['sess_email'] = $row['email'];
+                    $_SESSION['sess_role'] = $row['role'];
                     header("location:../views/homepage.php");
                 }   
                 else {
