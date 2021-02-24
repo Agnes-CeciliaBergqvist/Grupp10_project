@@ -1,33 +1,35 @@
 <?php
- include("../includes/database_connection.php");
+include("database_connection.php");
+
+session_start();
 
 $msg =""; 
 if(isset($_POST['publishBtn'])) {
-    $titel = $_POST['titel'];
-    $description = $_POST['description'];
+    $username = $_SESSION['sess_user_name'];
+    $title = $_POST['title'];
+    $message = $_POST['message'];
     $category = $_POST['category'];
     //$date = $_POST['postdate'];
 
-if($titel != "" & $description != "" & $category != "") {
+if($title != "" & $message != "" & $category != "") {
 
-$sql = "INSERT INTO posts (titel, description, category) VALUES(:titel_IN, :description_IN, :category_IN)";
-$stmt = $db->prepare($sql);
+    $sql = "INSERT INTO posts (username, title, message, category) VALUES(:username_IN, :title_IN, :message_IN, :category_IN)";
+    $stmt = $db->prepare($sql);
 
-$stmt->bindParam(':titel_IN', $titel);
-$stmt->bindParam(':description_IN', $description);
-$stmt->bindParam(':category_IN', $category);
-//$stmt->bindParam(':postdate_IN', $date);
+    $stmt->bindParam(':username_IN', $username);
+    $stmt->bindParam(':title_IN', $title);
+    $stmt->bindParam(':message_IN', $message);
+    $stmt->bindParam(':category_IN', $category);
+    //$stmt->bindParam(':postdate_IN', $date);
 
-if($stmt->execute());{
-    header("location:homepage.php");
-
-
+    if($stmt->execute());{
+        header("location:../views/homepage.php");
+    }
 }
-//else {
-    //$msg = "All fields are required! Try again";
-    //echo $msg;
-    
-
-}}
+else {
+    $msg = "All fields are required! <a href='../views/posts.php'>Try again</a>";
+    echo $msg;
+}
+}
 
 ?>
