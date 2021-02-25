@@ -17,8 +17,11 @@ $stm = $db->query("SELECT id, username, title, message, category  FROM posts");
 echo "<pre>";
 while ($row = $stm->fetch()) {
     $blogg_id = $row['id'];
+
+    if(isset($_SESSION['sess_role']) && $_SESSION['sess_role'] == "admin"){
     echo "<a href='../includes/handleDelete.php?delete_id=$blogg_id'>Delete</a>";
     echo "<a href='../views/edit.php?id=$blogg_id'>Edit</a>";
+    }
 ?>
 
     <?php echo $row['id'] . " " . $row['username'] . " " . $row['title'] . " " . $row['message'] . " " . $row['category'] . "<br />" ;
