@@ -14,6 +14,7 @@ if (isset($_GET['id'])) {
 
     //Shows the old message?? But dosent work, the input fields is empty. 
     while($row = $stm->fetch())  {
+
         $title = $row['title'];
         $message = $row['message'];
         $category = $row['category'];
@@ -23,15 +24,30 @@ if (isset($_GET['id'])) {
 <!-- //Form for updating the exsisting post -->
 <form method="POST" action ="../includes/handleEdit.php?">
     <input type="hidden" name="id" value="<?php echo $post_id; ?>"/>
+
+        $message = $row['message'];
+        $title = $row['title'];
+        $category = $row['category'];
+    }
+
+    if(isset($_SESSION['sess_role']) && $_SESSION['sess_role'] == "admin") {
+     ?>  
+        <form method="POST" action ="../includes/handleEdit.php?">
+        <input type="hidden" name="id" value="<?php echo $id; ?>"/><br />
         <label for="title">Title:</label>
-        <input type="text" name="title" id="title"/><br />
+        <input type="text" name="title" id="title" value="<?php echo $title; ?>"/><br />
         <label for="newMessage">Message:</label>
         <input type="textarea" name="newMessage" id="newMessage"/><br/>
+        <input type="textarea" name="newMessage" id="newMessage" value="<?php echo $message; ?>"/><br />
         <label for="category">Category:</label>
-        <input type="text" name="category" id="category"/><br />
-    <input type="submit" name="edit_user" value="edit">
-
-</form>
-<?php
+        <input type="text" name="category" id="category" value="<?php echo $category; ?>" /><br />
+        <input type="submit" name="edit_user" value="edit"> 
+        </form>
+    <?php
+    }
+    else {
+        echo "You are not an admin so you can not edit posts!";
+    }
+    
 }
  ?>

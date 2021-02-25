@@ -20,12 +20,31 @@ echo "<pre>";
 //Choosing the row with id and link to delete and edit with the bloggID=ID
 while ($row = $stm->fetch()) {
     $blogg_id = $row['id'];
+
+    if(isset($_SESSION['sess_role']) && $_SESSION['sess_role'] == "admin"){
     echo "<a href='../includes/handleDelete.php?delete_id=$blogg_id'>Delete</a>";
+
     echo "<a href='../views/edit.php?id=$blogg_id'>Edit</a>";?>
 
 
     <?php echo $row['id'] . " " . $row['username'] . " " . $row['title'] . " " . $row['message'] . " " . $row['category'] . "<br />" ;
     echo "</pre>";
+
+    echo "<a href='../views/edit.php?id=$blogg_id'>Edit</a>";
+    }
+echo $row['id'] . " " . $row['username'] . " " . $row['title'] . " " . $row['message'] . " " . $row['category'] . "<br />" ;
+echo "</pre>";
+
+// echo "<form method='POST' action='viewPosts.php'>
+//       <input type='submit' name='commentBtn' value='comment!'>
+//       </form>";
+
+// if(isset($_POST['commentBtn'])) {
+//     echo "<form method='POST' action='viewPosts.php'>
+//           <input type='textarea' name='comment'>
+//           </form>"; 
+// }
+
 }
 ?>
 
