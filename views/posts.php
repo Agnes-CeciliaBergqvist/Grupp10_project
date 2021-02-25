@@ -21,7 +21,7 @@ if(isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] != "") {
   <label for="title">Title:</label>
   <input type="text" name="title">
   <h4>Message</h4>
-  <textarea name="message" id="" cols="50" rows="20"></textarea><br>
+  <textarea name="message" id="message" cols="50" rows="20"></textarea><br>
   <!--<label for="image">Image:</label>-->
   <!--<input type="image" alt="Choose"><br>-->
   <label for="category">Category:</label>
