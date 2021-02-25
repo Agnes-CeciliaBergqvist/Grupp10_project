@@ -24,7 +24,7 @@ if (isset($_GET['id'])) {
     if(isset($_SESSION['sess_role']) && $_SESSION['sess_role'] == "admin") {
      ?>  
         <form method="POST" action ="../includes/handleEdit.php?">
-        <input type="hidden" name="id" value="<?php echo $id; ?>"/><br />
+        <input type="hidden" name="id" value="<?php echo $post_id; ?>"/><br />
         <label for="title">Title:</label>
         <input type="text" name="title" id="title" value="<?php echo $title; ?>"/><br />
         <label for="newMessage">Message:</label>
