@@ -1,3 +1,4 @@
+<!--This page shows all the posts that have been posted-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,14 +16,16 @@ echo "You are logged in as " . $_SESSION['sess_user_name']. "!";
 
 $stm = $db->query("SELECT id, username, title, message, category  FROM posts");
 echo "<pre>";
+
+//Choosing the row with id and link to delete and edit with the bloggID=ID
 while ($row = $stm->fetch()) {
     $blogg_id = $row['id'];
     echo "<a href='../includes/handleDelete.php?delete_id=$blogg_id'>Delete</a>";
-    echo "<a href='../views/edit.php?id=$blogg_id'>Edit</a>";
-?>
+    echo "<a href='../views/edit.php?id=$blogg_id'>Edit</a>";?>
+
 
     <?php echo $row['id'] . " " . $row['username'] . " " . $row['title'] . " " . $row['message'] . " " . $row['category'] . "<br />" ;
-echo "</pre>";
+    echo "</pre>";
 }
 ?>
 
