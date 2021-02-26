@@ -30,7 +30,7 @@ while ($row = $stm->fetch()) {
 
 
     }
-    echo $row['id'] . " " . $row['username'] . " " . $row['title'] . '<img src="' . $row['image'] . '"/> </br>' . $row['message'] . " " . $row['category'] . "<br />" ;
+    echo $row['id'] . " " . $row['username'] . " " . $row['title'] . '<img src="../includes/' . $row['image'] . '"/> </br>' . $row['message'] . " " . $row['category'] . "<br />" ;
     echo "</pre>";
 // echo "<form method='POST' action='viewPosts.php'>
 //       <input type='submit' name='commentBtn' value='comment!'>
