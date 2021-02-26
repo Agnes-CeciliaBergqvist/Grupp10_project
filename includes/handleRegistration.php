@@ -24,7 +24,7 @@ $krypt_password = md5($salt2.$password.$salt1);
         header("location:../views/login.php");
     }
     else {
-        echo $msg = "All fields are required for signup, try again!";
+        echo $msg = "All fields are required for registration, try again!";
         echo '<h4><a href="../views/registration.php">Back to registration!</a></h4>';
     }
 

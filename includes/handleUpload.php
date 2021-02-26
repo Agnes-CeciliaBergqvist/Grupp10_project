@@ -1,10 +1,10 @@
 <?php 
 
-$upload_dir = "../images/";
-$target_file = $upload_dir . basename($FILES['chosenImage']['name']);
-$fileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+$upload_dir = "images/";
+$target_file = $upload_dir . basename($_FILES['chosenImage']['name']);
+$file_type = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
-if(isset($_POST['submit'])){
+if(isset($_POST['uploadImageBtn'])){
     $check = getimagesize($_FILES['chosenImage']['tmp_name']);
     
     if ($check == false) {
@@ -33,8 +33,8 @@ if(move_uploaded_file($_FILES['chosenImage']['tmp_name'], $target_file)) {
     $sql = "INSERT INTO images (path) VALUES('$target_file')";
     $stm = $db->prepare($sql);
 
-    if($stm -> execute()) {
-        header("../views/login.pgp");
+    if($stm->execute()) {
+        header("location:../views/viewPosts.php");
     }
     else{
         header("../views/registration.php");
