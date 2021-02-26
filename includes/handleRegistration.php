@@ -3,6 +3,7 @@ include("database_connection.php");
 
 
 $msg ="";
+
 $username = $_POST['username'];
 $email = $_POST['email'];
 $password = $_POST['password'];

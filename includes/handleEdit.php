@@ -15,6 +15,7 @@ if (isset($_POST["edit_user"])) {
 
     //Update to the database with all the input fields
     $stm = $db->query("UPDATE posts SET message = '$newMessage', title = '$title', category ='$category' WHERE id=$id");
+    
     if($stm->execute()) {
         header("location:../views/viewPosts.php");
         
