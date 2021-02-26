@@ -10,22 +10,26 @@
 
 <?php 
 session_start();
+include("../includes/database_connection.php");
 
 if(isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] != "") {
   echo '<h1>Welcome '.$_SESSION['sess_user_name'].'</h1>';
   echo '<h4><a href="../includes/handleLogout.php">Logout</a></h4>';
 
   // You are only able to make posts if you are logged in!
-  echo '<form method="POST action="../includes/handleUpload.php" enctype="multipart/form-data">
+  
+
+  echo '<form action="../includes/handleposts.php" method="POST">
+  <h2>Make your new blogpost here</h2>
+  <label for="title">Title:</label>
+  <input type="text" name="title"></br>';
+  echo '<form method="POST" action="../includes/handleUpload.php" enctype="multipart/form-data">
           <input type="file" name="chosenImage"/><br />
           <input type="submit" name="uploadImageBtn" value="Ladda upp!" />
         </form>';
-
-  echo '<form action="../includes/handleposts.php" method="POST" align=center>
-  <h2>Make your new blogpost here</h2>
-  <label for="title">Title:</label>
-  <input type="text" name="title">
-  <h4>Message</h4>
+       
+        echo'
+        <h4>Message</h4>
   <textarea name="message" id="message" cols="50" rows="20"></textarea><br>
   <!--<label for="image">Image:</label>-->
   <!--<input type="image" alt="Choose"><br>-->
