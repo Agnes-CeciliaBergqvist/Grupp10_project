@@ -2,7 +2,7 @@
 
 $upload_dir = "images/";
 $target_file = $upload_dir . basename($_FILES['chosenImage']['name']);
-$fileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+$file_type = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
 if(isset($_POST['uploadImageBtn'])){
     $check = getimagesize($_FILES['chosenImage']['tmp_name']);
@@ -33,7 +33,7 @@ if(move_uploaded_file($_FILES['chosenImage']['tmp_name'], $target_file)) {
     $stm = $db->prepare($sql);
 
     if($stm->execute()) {
-        header("../views/login.pgp");
+        header("location:../views/login.pgp");
     }
     else{
         header("../views/registration.php");
