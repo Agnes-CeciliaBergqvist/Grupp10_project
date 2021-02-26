@@ -17,7 +17,7 @@ if(isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] != "") {
 
   // You are only able to make posts if you are logged in!
   echo '<form method="POST action="../includes/handleUpload" enctype="multipart/form-data">
-          <input type="file" name="imageToUpload"/><br />
+          <input type="file" name="chosenImage"/><br />
           <input type="submit" value="Ladda upp!" />
         </form>';
 
