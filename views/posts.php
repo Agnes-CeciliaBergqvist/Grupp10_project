@@ -16,6 +16,11 @@ if(isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] != "") {
   echo '<h4><a href="../includes/handleLogout.php">Logout</a></h4>';
 
   // You are only able to make posts if you are logged in!
+  echo '<form method="POST action="../includes/handleUpload" enctype="multipart/form-data">
+          <input type="file" name="imageToUpload"/><br />
+          <input type="submit" value="Ladda upp!" />
+        </form>';
+
   echo '<form action="../includes/handleposts.php" method="POST" align=center>
   <h2>Make your new blogpost here</h2>
   <label for="title">Title:</label>
