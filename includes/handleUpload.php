@@ -6,6 +6,7 @@ $fileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
 if(isset($_POST['submit'])){
     $check = getimagesize($_FILES['chosenImage']['tmp_name']);
+    
     if ($check == false) {
         echo "The file is not an image!";
         die;

@@ -1,4 +1,6 @@
 
+<!-- Information from the new user for registration -->
+
 <form method="POST" action="../includes/handleRegistration.php">
 <input type="text" placeholder="Insert Username..." name="username"><br>
 <input type="email" placeholder="Insert E-mail" name="email"><br>
