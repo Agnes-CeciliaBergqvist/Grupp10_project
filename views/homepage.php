@@ -16,9 +16,10 @@ if(isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] != "") {
 
   if(isset($_SESSION['sess_role']) && $_SESSION['sess_role'] == "admin") {
     echo "Du är inloggad som <b>Admin</b><br />";
+
+    echo 'Do you want to publish something? <a href="posts.php">Click here!</a> <br>';
   }
-  echo 'Do you want to publish something? <a href="posts.php">Click here!</a> <br>
-        Do you want to see all existing posts? <a href="viewPosts.php">Click here!</a>';
+    echo 'Do you want to see all existing posts? <a href="viewPosts.php">Click here!</a>';
         
 
 
