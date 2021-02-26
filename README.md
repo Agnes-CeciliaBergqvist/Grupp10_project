@@ -20,5 +20,9 @@ CREATE TABLE komPost ( commentId INT NOT NULL,
                        CONSTRAINT FK_comments FOREIGN KEY(commentId) REFERENCES comments(id),
           			   CONSTRAINT FK_posts FOREIGN KEY(postId) REFERENCES posts(id)
                      ) ENGINE = InnoDB;
+
+
+Kommentarer: JS code i php, komPost tabellen, JOINS? kommentarer ska ligga i klasser. 
+
     
     
