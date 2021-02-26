@@ -20,24 +20,20 @@ if (isset($_GET['id'])) {
         $category = $row['category'];
     }
     ?>
-
 <!-- //Form for updating the exsisting post -->
 <form method="POST" action ="../includes/handleEdit.php?">
-    <input type="hidden" name="id" value="<?php echo $post_id; ?>"/>
-
-        $message = $row['message'];
-        $title = $row['title'];
-        $category = $row['category'];
+<input type="hidden" name="id" value="<?php echo $post_id; ?>"/>
+<?php
+        
     }
 
     if(isset($_SESSION['sess_role']) && $_SESSION['sess_role'] == "admin") {
      ?>  
         <form method="POST" action ="../includes/handleEdit.php?">
-        <input type="hidden" name="id" value="<?php echo $id; ?>"/><br />
+        <input type="hidden" name="id" value="<?php echo $post_id; ?>"/><br />
         <label for="title">Title:</label>
         <input type="text" name="title" id="title" value="<?php echo $title; ?>"/><br />
         <label for="newMessage">Message:</label>
-        <input type="textarea" name="newMessage" id="newMessage"/><br/>
         <input type="textarea" name="newMessage" id="newMessage" value="<?php echo $message; ?>"/><br />
         <label for="category">Category:</label>
         <input type="text" name="category" id="category" value="<?php echo $category; ?>" /><br />
@@ -49,5 +45,5 @@ if (isset($_GET['id'])) {
         echo "You are not an admin so you can not edit posts!";
     }
     
-}
+
  ?>
