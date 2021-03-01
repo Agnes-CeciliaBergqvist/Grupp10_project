@@ -1,5 +1,6 @@
 <!--This page shows all the posts that have been posted-->
 <!DOCTYPE html>
+<html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -28,8 +29,48 @@ while ($row = $stm->fetch()) {
     echo "<div class='adminBtns'> <a href='../includes/handleDelete.php?delete_id=$blogg_id'>Delete</a>" ;
     echo "<a href='../views/edit.php?id=$blogg_id'>Edit</a></div> </div>";  
     }
-    echo "<div class='comments'> Here are the comments going to be ! </div> </div>";
+    ?>
+    <div class='comments'> 
+    <form action="../includes/handlecomments.php" method="POST">
+    <input type="button" name="commentBtn" id="1" value="Leave a comment" onclick="hide();"></br>
+    <div id="textarea" style="display: none;">
+    <textarea name="comment" id="" cols="30" rows="10"></textarea></br>
+    <input type="submit" name="publishBtn" id="publishBtn" value="Publish" onsubmit="show();">
+    </div>
+    </form>  
+    </div> </div>
+    
+    <script>
+
+var Btn = document.getElementById("1"); 
+var Comment = document.getElementById("textarea");
+
+function hide() {
+    if (Btn.style.display === "none") {
+    Btn.style.display = "block";
+    Comment.style.display = "none";
+  } else {
+    Btn.style.display = "none";
+    Comment.style.display = "block";
+  }
 }
+
+function show(){
+  
+    if (Comment.style.display === "none") {
+    Comment.style.display = "block";
+    Btn.style.display = "none";
+  } else {
+    Comment.style.display = "none";
+    Btn.style.display = "block";
+
+  }
+
+}
+</script>
+    <?php
+}
+
 echo "</div>"
 ?>
 
