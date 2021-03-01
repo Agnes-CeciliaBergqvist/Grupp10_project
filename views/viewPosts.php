@@ -14,7 +14,7 @@ session_start();
 include("../includes/database_connection.php");
 echo "You are logged in as " . $_SESSION['sess_user_name']. "!";
 
-$stm = $db->query("SELECT id, username, title, image, message, category  FROM posts");
+$stm = $db->query("SELECT id, userId, title, image, message, category, date  FROM posts");
 echo "<pre>";
 
 //Choosing the row with id and link to delete and edit with the bloggID=ID
@@ -31,7 +31,7 @@ while ($row = $stm->fetch()) {
 
 
     }
-    echo $row['id'] . " " . $row['username'] . " " . $row['title'] . '<img src="../includes/' . $row['image'] . '" "height=200 width=300"/> </br>' . $row['message'] . " " . $row['category'] . "<br />" ;
+    echo $row['id'] . " " . $row['userId'] . " " . $row['title'] . '<img src="../includes/' . $row['image'] . '" "height=200 width=300"/> </br>' . $row['message'] . " " . $row['category'] . " Published: " . $row['date'] . "<br />" ;
     echo "</pre>";
 // echo "<form method='POST' action='viewPosts.php'>
 //       <input type='submit' name='commentBtn' value='comment!'>

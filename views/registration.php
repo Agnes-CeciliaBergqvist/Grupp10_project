@@ -1,3 +1,6 @@
+<?php
+echo date('d-m-y h:i:s');
+?>
 
 <!-- Information from the new user for registration -->
 
