@@ -8,8 +8,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/style.css"> 
     <title>Document</title>
+    <link href="../CSS/style.css" rel="stylesheet" type="text/css"/>
+
 </head>
 <body>
+
+  <header id="header">
+
+    <div id="header-name">
+     <h1>Millhouse</h1>  
+
+        <div id="nav-bar">
+         <a href="../views/homepage.php">Start</a>
+         
+        </div>
+    </div> 
+
+</header>   
 
 <?php 
 session_start();
