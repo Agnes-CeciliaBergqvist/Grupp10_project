@@ -1,5 +1,6 @@
 <!--This page shows all the posts that have been posted-->
 <!DOCTYPE html>
+<html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -33,18 +34,10 @@ while ($row = $stm->fetch()) {
     }
     echo "Post ID: " . $row['id'] . "<br>User ID: " . $row['userId'] . "<br> " . $row['title'] . '<br><img src="../includes/' . $row['image'] . '" "height=200 width=300"/> </br>' . $row['message'] . " " . $row['category'] . " Published: " . $row['date'] . "<br />" ;
     echo "</pre>";
-// echo "<form method='POST' action='viewPosts.php'>
-//       <input type='submit' name='commentBtn' value='comment!'>
-//       </form>";
 
-// if(isset($_POST['commentBtn'])) {
-//     echo "<form method='POST' action='viewPosts.php'>
-//           <input type='textarea' name='comment'>
-//           </form>"; 
-// }
+    ?>
 
-}
-?>
+
 
 </body>
 </html>
