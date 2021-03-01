@@ -1,3 +1,18 @@
+<link href="../CSS/style.css" rel="stylesheet" type="text/css"/>
+
+<header id="header">
+
+<div id="header-name">
+  <h1>Millhouse</h1>  
+
+  <div id="nav-bar">
+    <a href="../views/homepage.php">Start</a>
+    <a href="../views/login.php">Login</a>
+  </div>
+</div> 
+ 
+</header>
+
 <?php
 echo date('d-m-y h:i:s');
 ?>
