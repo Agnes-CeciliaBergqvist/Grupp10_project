@@ -1,10 +1,12 @@
 <!--This page shows all the posts that have been posted-->
 <!DOCTYPE html>
+<html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/style.css"> 
     <title>Document</title>
     <link href="../CSS/style.css" rel="stylesheet" type="text/css"/>
 
@@ -27,38 +29,64 @@
 <?php 
 session_start();
 include("../includes/database_connection.php");
-echo "You are logged in as " . $_SESSION['sess_user_name']. "!";
+echo "<h1 id='welcomeMessage'> You are logged in as " . $_SESSION['sess_user_name']. "! </h1>";
 
 $stm = $db->query("SELECT id, userId, title, image, message, category, date  FROM posts");
-echo "<pre>";
+echo "<div id='allPosts'>";
 
 //Choosing the row with id and link to delete and edit with the bloggID=ID
 while ($row = $stm->fetch()) {
     $blogg_id = $row['id'];
-
+    
+    echo "<div class ='entryWithComment'> <div class='blogEntries'> <p id='postId'> Post ID: " . $row['id'] . "</p> <p id='userId'> Publisher ID: " . $row['userId'] . "</p> <h2 id='entryTitle'> " . $row['title'] . '</h2> <p id="enrtyImage"><img src="../includes/' . $row['image'] . '" "height=200 width=300"/></p>' . "<p id='entryMessage'>" . $row['message'] . "</p> <p id='entryCategory'> " . $row['category'] . "</p> <p id='entryPublished'> Published: " . $row['date'] . " </p>" ;
     //Checks if you are logged in as a user or a admin
     if(isset($_SESSION['sess_role']) && $_SESSION['sess_role'] == "admin"){
-    echo "<a href='../includes/handleDelete.php?delete_id=$blogg_id'>Delete</a> <br>" ;
-    echo "<a href='../views/edit.php?id=$blogg_id'>Edit</a> <br>";
-
-
-    
-
-
+    echo "<div class='adminBtns'> <a href='../includes/handleDelete.php?delete_id=$blogg_id'>Delete</a>" ;
+    echo "<a href='../views/edit.php?id=$blogg_id'>Edit</a></div> </div>";  
     }
-    echo "Post ID: " . $row['id'] . "<br>User ID: " . $row['userId'] . "<br> " . $row['title'] . '<br><img src="../includes/' . $row['image'] . '" "height=200 width=300"/> </br>' . $row['message'] . " " . $row['category'] . " Published: " . $row['date'] . "<br />" ;
-    echo "</pre>";
-// echo "<form method='POST' action='viewPosts.php'>
-//       <input type='submit' name='commentBtn' value='comment!'>
-//       </form>";
+    ?>
+    <div class='comments'> 
+    <form action="../includes/handlecomments.php" method="POST">
+    <input type="button" name="commentBtn" id="1" value="Leave a comment" onclick="hide();"></br>
+    <div id="textarea" style="display: none;">
+    <textarea name="comment" id="" cols="30" rows="10"></textarea></br>
+    <input type="submit" name="publishBtn" id="publishBtn" value="Publish" onsubmit="show();">
+    </div>
+    </form>  
+    </div> </div>
+    
+    <script>
 
-// if(isset($_POST['commentBtn'])) {
-//     echo "<form method='POST' action='viewPosts.php'>
-//           <input type='textarea' name='comment'>
-//           </form>"; 
-// }
+var Btn = document.getElementById("1"); 
+var Comment = document.getElementById("textarea");
+
+function hide() {
+    if (Btn.style.display === "none") {
+    Btn.style.display = "block";
+    Comment.style.display = "none";
+  } else {
+    Btn.style.display = "none";
+    Comment.style.display = "block";
+  }
+}
+
+function show(){
+  
+    if (Comment.style.display === "none") {
+    Comment.style.display = "block";
+    Btn.style.display = "none";
+  } else {
+    Comment.style.display = "none";
+    Btn.style.display = "block";
+
+  }
 
 }
+</script>
+    <?php
+}
+
+echo "</div>"
 ?>
 
 </body>
