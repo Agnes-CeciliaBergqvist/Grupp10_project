@@ -1,0 +1,30 @@
+#allPosts {
+    display:flex;
+    flex-direction: column;
+    align-items:flex-start;
+}
+.blogEntries {
+    font-size: 1vw;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    border: 0.25vw solid lightblue;
+    box-shadow: 0.5vw 0.5vw #E3F0F0;
+    width:30vw;
+    margin-bottom: 2vw;
+    margin-left: 5vw;
+
+
+}
+
+.adminBtns {
+    display:flex;
+    flex-direction: column;
+    
+}
+
+#welcomeMessage{
+   display:flex;
+   justify-content: center;
+}

@@ -21,17 +21,18 @@ echo "<div id='allPosts'>";
 
 //Choosing the row with id and link to delete and edit with the bloggID=ID
 while ($row = $stm->fetch()) {
-    $blogg_id = $row['id'];
+    $postId = $row['id'];
     
     echo "<div class ='entryWithComment'> <div class='blogEntries'> <p id='postId'> Post ID: " . $row['id'] . "</p> <p id='userId'> Publisher ID: " . $row['userId'] . "</p> <h2 id='entryTitle'> " . $row['title'] . '</h2> <p id="enrtyImage"><img src="../includes/' . $row['image'] . '" "height=200 width=300"/></p>' . "<p id='entryMessage'>" . $row['message'] . "</p> <p id='entryCategory'> " . $row['category'] . "</p> <p id='entryPublished'> Published: " . $row['date'] . " </p>" ;
     //Checks if you are logged in as a user or a admin
     if(isset($_SESSION['sess_role']) && $_SESSION['sess_role'] == "admin"){
-    echo "<div class='adminBtns'> <a href='../includes/handleDelete.php?delete_id=$blogg_id'>Delete</a>" ;
-    echo "<a href='../views/edit.php?id=$blogg_id'>Edit</a></div> </div>";  
+    echo "<div class='adminBtns'> <a href='../includes/handleDelete.php?delete_id=$postId'>Delete</a>" ;
+    echo "<a href='../views/edit.php?id=$postId'>Edit</a></div> </div>";  
     }
+
     ?>
     <div class='comments'> 
-    <form action="../includes/handlecomments.php" method="POST">
+    <form action="../includes/handleComments.php<?php echo"?id=$postId";?>" method="POST">
     <input type="button" name="commentBtn" id="1" value="Leave a comment" onclick="hide();"></br>
     <div id="textarea" style="display: none;">
     <textarea name="comment" id="" cols="30" rows="10"></textarea></br>
