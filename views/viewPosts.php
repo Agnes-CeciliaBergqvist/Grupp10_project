@@ -27,9 +27,9 @@ while ($row = $stm->fetch()) {
     //Checks if you are logged in as a user or a admin
     if(isset($_SESSION['sess_role']) && $_SESSION['sess_role'] == "admin"){
     echo "<div class='adminBtns'> <a href='../includes/handleDelete.php?delete_id=$postId'>Delete</a>" ;
-    echo "<a href='../views/edit.php?id=$postId'>Edit</a></div> </div>";  
+    echo "<a href='../views/edit.php?id=$postId'>Edit</a></div>";  
     }
-
+    echo "</div>";
     ?>
     <div class='comments'> 
     <form action="../includes/handleComments.php<?php echo"?id=$postId";?>" method="POST">
