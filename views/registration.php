@@ -1,3 +1,6 @@
+<?php
+echo date('d-m-y h:i:s');
+?>
 
 <form method="POST" action="../includes/handleRegistration.php">
 <input type="text" placeholder="Insert Username..." name="username"><br>
