@@ -28,19 +28,20 @@ CREATE TABLE posts (
 CREATE TABLE comments ( 
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, 
     postId INT NOT NULL,
-    user_Id INT NOT NULL, 
+    userId INT NOT NULL, 
     date DATETIME NOT NULL,
+    update DATETIME NOT NULL,
     message VARCHAR(100) NOT NULL, 
     CONSTRAINT FK_postId FOREIGN KEY(postId) REFERENCES posts(id),
-    CONSTRAINT FK_user_Id FOREIGN KEY(user_Id) REFERENCES users(id)
+    CONSTRAINT FK_user_Id FOREIGN KEY(userId) REFERENCES users(id)
 ) ENGINE = innoDB;
 
 CREATE TABLE komPost ( 
     commentId INT NOT NULL,
-    post_Id INT NOT NULL,
+    postId INT NOT NULL,
     PRIMARY KEY (commentId, post_Id),
     CONSTRAINT FK_commentId FOREIGN KEY(commentId) REFERENCES comments(id),
-    CONSTRAINT FK_post_Id FOREIGN KEY(post_Id) REFERENCES posts(id)
+    CONSTRAINT FK_post_Id FOREIGN KEY(postId) REFERENCES posts(id)
 ) ENGINE = InnoDB;
 
 
