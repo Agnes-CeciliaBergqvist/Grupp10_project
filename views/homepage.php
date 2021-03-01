@@ -15,16 +15,17 @@
 <header id="header">
 
     <div id="header-name">
-      <h1>Millhouse</h1>
-    </div>    
+      <h1>Millhouse</h1>  
     
       <div id="nav-bar">
         <a href="../views/homepage.php">Start</a>
         <a href="../views/login.php">Login</a>
         <a href="../views/viewPosts.php">Posts</a>
       </div>
-    
+    </div> 
+     
 </header>
+
 
 <?php
 session_start();

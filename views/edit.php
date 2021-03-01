@@ -1,4 +1,19 @@
 <!--This code should give us a new page with the message that we would like to edit-->
+<link href="../CSS/style.css" rel="stylesheet" type="text/css"/>
+
+<header id="header">
+
+<div id="header-name">
+  <h1>Millhouse</h1>  
+
+  <div id="nav-bar">
+    <a href="../views/homepage.php">Start</a>
+    <a href="../views/posts.php">Create post</a>
+    <a href="../views/viewPosts.php">Posts</a>
+  </div>
+</div> 
+ 
+</header>
 
 <?php 
 session_start();
