@@ -2,8 +2,9 @@
 include("database_connection.php");
 session_start();
 $upload_dir = "images/";
-$target_file = $upload_dir . basename($_FILES['chosenImage']['name']);
-$file_type = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+$file_type = strtolower(pathinfo(basename($_FILES['chosenImage']['name']), PATHINFO_EXTENSION));
+$target_file = $upload_dir . basename(md5(date('d-m-y h:i:s'))). "." .$file_type;
+
 
 if(isset($_POST['publishBtn'])){
 

@@ -23,15 +23,15 @@ while ($row = $stm->fetch()) {
 
     //Checks if you are logged in as a user or a admin
     if(isset($_SESSION['sess_role']) && $_SESSION['sess_role'] == "admin"){
-    echo "<a href='../includes/handleDelete.php?delete_id=$blogg_id'>Delete</a>";
-    echo "<a href='../views/edit.php?id=$blogg_id'>Edit</a>";
+    echo "<a href='../includes/handleDelete.php?delete_id=$blogg_id'>Delete</a> <br>" ;
+    echo "<a href='../views/edit.php?id=$blogg_id'>Edit</a> <br>";
 
 
     
 
 
     }
-    echo $row['id'] . " " . $row['userId'] . " " . $row['title'] . '<img src="../includes/' . $row['image'] . '" "height=200 width=300"/> </br>' . $row['message'] . " " . $row['category'] . " Published: " . $row['date'] . "<br />" ;
+    echo "Post ID: " . $row['id'] . "<br>User ID: " . $row['userId'] . "<br> " . $row['title'] . '<br><img src="../includes/' . $row['image'] . '" "height=200 width=300"/> </br>' . $row['message'] . " " . $row['category'] . " Published: " . $row['date'] . "<br />" ;
     echo "</pre>";
 // echo "<form method='POST' action='viewPosts.php'>
 //       <input type='submit' name='commentBtn' value='comment!'>
