@@ -5,8 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link href="../CSS/style.css" rel="stylesheet" type="text/css"/>
+
+    
 </head>
 <body>
+
+<header id="header">
+
+    <div id="header-name">
+      <h1>Millhouse</h1>
+    </div>    
+    
+      <div id="nav-bar">
+        <a href="../views/homepage.php">Start</a>
+        <a href="../views/login.php">Login</a>
+        <a href="../views/viewPosts.php">Posts</a>
+      </div>
+    
+</header>
 
 <?php
 session_start();
