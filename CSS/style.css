@@ -26,8 +26,13 @@
     color:#038ff4; 
 }
 
-h1 {
-    margin-left: 18rem;
+#h1 {
+    margin-left: 3rem;
+}
+
+#nav-bar {
+    padding: 14px 20px;
+
 }
 
 #nav-bar-a {
@@ -93,11 +98,8 @@ h1 {
 }
 
 /* Footer CSS starts here */
+
 #footer {
-    /* height: 20rem;
-    width: auto;
-    background-color: #253b4d;
-    margin-top: 27.5rem; */
     background-color: #253b4d;
     color: white;
     display: flex;
@@ -106,7 +108,7 @@ h1 {
     padding-top: 2rem;
     padding-bottom: 2rem;
     width: 30.6rem;
-    margin-top: 34rem;
+    margin-top: 35rem;
 }
 
 #footer-headline {
@@ -130,7 +132,7 @@ p,
 .fab fa-twitter, 
 .fab fa-youtube,
 .fab fa-linkedin {
-    padding: 1rem; 
+    padding: 0.2rem; 
 }
 
 
@@ -183,7 +185,7 @@ p,
 
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 425px) {
     #footer {
         width: auto; 
     }
@@ -191,4 +193,12 @@ p,
         width: auto; 
     }
 }
+
+
+@media screen and (min-width: 425px) { 
+    h1 {
+        margin-left: 5rem;
+}
+}
+
 

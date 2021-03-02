@@ -17,7 +17,9 @@
 <header id="header">
 
     <div id="header-name">
-      <h1>Millhouse</h1>  
+    
+      <h1 id="h1">Millhouse <i class="fab fa-slack"></i></h1>  
+      
 
       <div class="container test">
         
@@ -74,14 +76,19 @@ if(isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] != "") {
 
          <section class="about-us">
            <h3 id="footer-headline">About us</h3>
-           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+           <p>Millhouse is a wholesale company<br>
+              that sells clothes, accessories and<br>
+              small interior design items to fashion<br>
+              and lifestyle stores.</p>
          </section>
 
          
          <section class="contact">
            <h3 id="footer-headline">Contact</h3> 
-           <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-         </section>
+           
+           <p><i class="fas fa-phone"></i> 040-222 222 222</p>
+           <p><i class="fas fa-envelope"></i> millhouse@medieinstitutet.se</p>
+          </section>
 
          <section class="social-media">
            <h3 id="footer-headline">Follow us</h3>
