@@ -57,5 +57,41 @@ if(isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] != "") {
 }
 ?>
    
+
+
+   <footer id="footer">
+     <div id="footer-container">
+
+       <div class="info-company">
+
+         <section class="about-us">
+           <h3 id="footer-headline">About us</h3>
+           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos consequuntur et temporibus dolorem est excepturi dolorum, praesentium amet cupiditate suscipit dolor, harum aspernatur officiis mollitia ea porro neque? Non, itaque?</p>
+         </section>
+
+         
+         <section class="contact">
+           <h3 id="footer-headline">Contact</h3> 
+           <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. At quibusdam nulla quam neque temporibus placeat, repellat dolores quo. Rerum illo numquam possimus ullam. Non est dolorum enim dolore eligendi optio?</p>
+         </section>
+
+         <section class="social-media">
+           <h3 id="footer-headline">Follow us</h3>
+          <i class="fab fa-instagram-square"></i>
+           <i class="fab fa-facebook"></i>
+           <i class="fab fa-twitter"></i>
+           <i class="fab fa-youtube"></i>
+           <i class="fab fa-linkedin"></i>
+         </section>
+
+
+
+       </div>
+     </div>
+
+
+  </footer>
+
+
 </body>
 </html>

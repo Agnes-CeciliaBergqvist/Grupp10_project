@@ -9,18 +9,19 @@
     padding: 0.5rem;
     margin-bottom: 1rem;
     text-align: center;
-    background-color: rgb(204, 208, 209);
-    color: rgb(255, 255, 255);
+    background-color: rgb(236, 242, 243);
+    color: white;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-flow: row wrap; 
+    box-shadow: 0.4vw 0.4vw #E3F0F0;
 }
 #header-name {
     display: flex;
     text-align: center;
     flex-flow: row-reverse;
-    color: black;
+    color:#038ff4; 
 }
 
 #nav-bar-a {
@@ -35,7 +36,7 @@
 }
 
 .icon {
-    color: black; 
+    color:#253b4d;
 }
 
 
@@ -84,6 +85,31 @@
    justify-content: center;
 }
 
+/* Footer CSS starts here */
+#footer-container {
+    height: 20rem;
+    width: auto;
+    background-color: #253b4d;
+    margin-top: 27.5rem;
+
+}
+#footer-headline {
+    color:#038ff4; 
+}
+.info-company {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    color: #b7b7b7;
+    line-height: 1.5;
+    border-top: 1px solid #455867;
+    border-bottom: 1px solid #455867;
+
+}
+
+
+/* Media queries start here */
 @media screen and (max-width: 600px) { 
 
     #nav-bar {
@@ -99,7 +125,7 @@
     }
 
     #nav-bar a.icon {
-        background: rgb(9, 9, 9); 
+        background: #253b4d; 
         display: block;
         position: absolute;  
         top: 0;  
