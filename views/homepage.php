@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link href="../CSS/style.css" rel="stylesheet" type="text/css"/>
+    <script src="../JavaScript/Js.js" defer></script>
 
     
 </head>
@@ -16,11 +18,18 @@
 
     <div id="header-name">
       <h1>Millhouse</h1>  
+      <div class="container">
     
       <div id="nav-bar">
-        <a href="../views/homepage.php">Start</a>
-        <a href="../views/login.php">Login</a>
-        <a href="../views/viewPosts.php">Posts</a>
+      
+        <a class="nav-bar-a" href="../views/homepage.php">Start</a>
+        <a class="nav-bar-a" href="../views/login.php">Login</a>
+        <a class="nav-bar-a" href="../views/viewPosts.php">Posts</a>
+      
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
       </div>
     </div> 
      

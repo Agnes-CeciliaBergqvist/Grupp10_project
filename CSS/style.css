@@ -22,9 +22,6 @@
     flex-flow: row-reverse;
     color: black;
 }
-#nav-bar {
-    margin-right: 15rem;
-}
 
 #nav-bar-a {
     text-decoration: none;
@@ -33,6 +30,14 @@
     margin-right: 5rem;
     
 }
+#nav-bar a.icon {
+    display: none;
+}
+
+.icon {
+    color: black; 
+}
+
 
 /* #allPosts {
     display:flex;
@@ -77,4 +82,53 @@
 #welcomeMessage{
    display:flex;
    justify-content: center;
+}
+
+@media screen and (max-width: 600px) { 
+
+    #nav-bar {
+        overflow: hidden;
+        position: relative;
+    }
+    
+    #nav-bar a {
+        display: none;
+        color: white; 
+        padding: 14px 16px; 
+        display: block; 
+    }
+
+    #nav-bar a.icon {
+        background: rgb(9, 9, 9); 
+        display: block;
+        position: absolute;  
+        top: 0;  
+    }
+    #nav-bar a:hover {
+        background-color: #ddd;
+        color: black; 
+    }
+    .icon {
+        color: white;
+        display: none; 
+          
+    }
+    .container {
+        max-width: 480px;
+        margin: auto;
+        background-color: #555;
+        height: 200px;
+        color: white;
+        border-radius: 10px;
+      }
+      
+
+   
+
+
+
+
+
+
+
 }
