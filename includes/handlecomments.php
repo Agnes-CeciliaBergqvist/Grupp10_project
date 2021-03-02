@@ -13,12 +13,12 @@ if(isset($_POST['publishBtn'])) {
 
 if ($message != "") {
 
-    $sql = "INSERT INTO comments (postId, user_Id, date, message) VALUES(:postId_IN, :userId_IN, :date_IN, :message_IN)";
+    $sql = "INSERT INTO comments (postId, userId, message, date) VALUES(:postId_IN, :userId_IN, :message_IN, :date_IN)";
     $stm = $db->prepare($sql);
     $stm->bindParam(':postId_IN',$postId);
     $stm->bindParam(':userId_IN',$userId);
-    $stm->bindParam(':date_IN',$date);
     $stm->bindParam(':message_IN',$message);
+    $stm->bindParam(':date_IN',$date);
 
     if($stm->execute()) {
         header("location:../views/viewPosts.php");
