@@ -1,5 +1,5 @@
 <?php 
-include("database_connection");
+include("database_connection.php");
 session_start();
 
 if(isset($_POST['publishBtn'])) {
