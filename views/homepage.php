@@ -18,20 +18,28 @@
 
     <div id="header-name">
       <h1>Millhouse</h1>  
-      <div class="container">
-    
-      <div id="nav-bar">
-      
-        <a class="nav-bar-a" href="../views/homepage.php">Start</a>
-        <a class="nav-bar-a" href="../views/login.php">Login</a>
-        <a class="nav-bar-a" href="../views/viewPosts.php">Posts</a>
-      
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                <i class="fa fa-bars"></i>
+
+      <div class="container test">
+        
+        
+        <div id="nav-bar">
+          <ul>
+            <a class="nav-bar-b" href="javascript:void(0);" class="icon">
+              <i class="fa fa-bars"></i>
             </a>
-        </div>
-      </div>
-    </div> 
+          </ul>
+            <div class="container hidden">
+
+              <ul>
+                <a class="nav-bar-a" href="../views/homepage.php">Start</a>
+                <a class="nav-bar-a" href="../views/login.php">Login</a>
+                <a class="nav-bar-a" href="../views/viewPosts.php">Posts</a>
+              </ul>
+            </div>
+
+        </div> <!-- #nav-bar -->      
+      </div> <!-- .container -->
+    </div> <!-- #header-name -->
      
 </header>
 
@@ -66,13 +74,13 @@ if(isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] != "") {
 
          <section class="about-us">
            <h3 id="footer-headline">About us</h3>
-           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos consequuntur et temporibus dolorem est excepturi dolorum, praesentium amet cupiditate suscipit dolor, harum aspernatur officiis mollitia ea porro neque? Non, itaque?</p>
+           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
          </section>
 
          
          <section class="contact">
            <h3 id="footer-headline">Contact</h3> 
-           <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. At quibusdam nulla quam neque temporibus placeat, repellat dolores quo. Rerum illo numquam possimus ullam. Non est dolorum enim dolore eligendi optio?</p>
+           <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
          </section>
 
          <section class="social-media">
