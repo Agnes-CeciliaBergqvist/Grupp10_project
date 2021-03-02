@@ -45,8 +45,11 @@ while ($row = $stm->fetch()) {
     echo "<a href='../views/edit.php?id=$postId'>Edit</a></div>";  
     }
     echo "</div>";
+    echo "<div class='commentBox'>";
+    ;
+  
     ?>
-    <div class='comments'> 
+    <div class='leaveAComment'> 
     <form action="../includes/handleComments.php<?php echo"?id=$postId";?>" method="POST">
     <input type="button" name="commentBtn" id="1" value="Leave a comment" onclick="hide();"></br>
     <div id="textarea" style="display: none;">
@@ -55,6 +58,8 @@ while ($row = $stm->fetch()) {
     </div>
     </form>  
     </div> </div>
+
+
     
     <script>
 
@@ -85,9 +90,15 @@ function show(){
 }
 </script>
     <?php
-}
-
-echo "</div>"
+    
+    $stmt = $db->query("SELECT id, postId, userId, message, date FROM comments WHERE postId = $postId");
+    while ($comRow = $stmt->fetch()) {
+      echo "<div class='comments'> <p id='commentId'> Comment ID: " . $comRow['id'] . "</p> <p id='commentPostId'> Post ID: " . $comRow['postId'] . "</p> <h2 id='commentUserId'> " . $comRow['userId'] . "</h2><p id='commentMessage'>" . $comRow['message'] . "</p> <p id='commentDate'> " . $comRow['date'] . "</p> </div>";
+    }
+   echo "</div>";
+   
+  }
+  echo "</div>";
 ?>
 
 </body>
