@@ -59,12 +59,12 @@ echo "<div id='allPosts'>";
 while ($row = $stm->fetch()) {
   $postId = $row['id'];
   
-  echo "<div class ='entryWithComment'> <div class='blogEntries'> <p id='postId'> Post ID: " . $row['id'] . "</p> <p id='userId'> Publisher ID: " . $row['userId'] . "</p> <h2 id='entryTitle'> " . $row['title'] . '</h2> <p id="enrtyImage"><img src="../includes/' . $row['image'] . '" "height=200 width=300"/></p>' . "<p id='entryMessage'>" . $row['message'] . "</p> <p id='entryCategory'> " . $row['category'] . "</p> <p id='entryPublished'> Published: " . $row['date'] . " </p>" ;
+  echo "<div class ='entryWithComment'> <div class='blogEntries'> <p id='postId'> Post ID: " . $row['id'] . "</p> <p id='userId'> Publisher ID: " . $row['userId'] . "</p> <h2 id='entryTitle'> " . $row['title'] . '</h2> <p id="enrtyImage"><img src="../includes/' . $row['image'] . '" "height=200 width=300"/></p>' . "<p id='entryMessage'>" . $row['message'] . "</p> <p id='entryCategory'> Category: " . $row['category'] . "</p> <p id='entryPublished'> Published: " . $row['date'] . " </p>" ;
   //Checks if you are logged in as a user or a admin
-  echo "<a href='specificPost.php?id=$postId' > Go to Comments!  </a>";
+  echo "<div class='postLinks'><a href='specificPost.php?id=$postId' > Go to Comments!  </a>";
   if(isset($_SESSION['sess_role']) && $_SESSION['sess_role'] == "admin"){
   echo "<div class='adminBtns'> <a href='../includes/handleDelete.php?delete_id=$postId'>Delete</a>" ;
-  echo "<a href='../views/edit.php?id=$postId'>Edit</a></div>";  
+  echo "<a href='../views/edit.php?id=$postId'>Edit</a></div></div>";  
   }
   echo "</div>";
 

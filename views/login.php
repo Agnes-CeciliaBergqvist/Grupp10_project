@@ -46,18 +46,18 @@
 
 <form name="User" method="POST" action="../includes/handleLogin.php" align="center">
 
-<h3 align="center">Enter Login Details</h3>
+<h3 class="enterLogin" align="center">Enter Login Details</h3>
  Username:<br>
- <input type="text" name="username">
+ <input class="loginFields" type="text" name="username">
  <br>
  Password:<br>
-<input type="password" name="password">
+<input class="loginFields" type="password" name="password">
 <br><br>
-<input type="submit" name="loginBtn" value="login">
+<input class ="loginBtn" type="submit" name="loginBtn" value="login">
 
 </form> 
 
-Not a member ? <a href="registration.php"> Register now!<a>
+<p class="notmember">Not a member ? <a href="registration.php"> Register now!<a></p>
 
 
 <footer id="footer">
