@@ -51,26 +51,30 @@ include("../includes/database_connection.php");
 
 //check if the user is logged in
 if(isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] != "") {
-  echo '<h1>Welcome '.$_SESSION['sess_user_name'].'</h1>';
-  echo '<h4><a href="../includes/handleLogout.php">Logout</a></h4>';
-
+  echo '<h1 class="WelcomePosts">Welcome '.$_SESSION['sess_user_name'].'!</h1>';
+  echo '<h4 class="logoutPosts"><a href="../includes/handleLogout.php">Logout</a></h4>';
+  
   // You are only able to make posts if you are logged in!
   
 
-  echo '<form action="../includes/handleposts.php" method="POST" enctype="multipart/form-data">
-  <h2>Make your new blogpost here</h2>
-  <label for="title">Title:</label>
-  <input type="text" name="title"></br>
-  <input type="file" name="chosenImage"/><br />  
-  <h4>Message</h4>
-  <textarea name="message" id="message" cols="50" rows="20"></textarea><br>
+  echo '<form class ="makePost" action="../includes/handleposts.php" method="POST" enctype="multipart/form-data">
+  <h2 class="newPost" >Make your new blogpost here</h2>
+  <label class="postFields" for="title">Title:</label>
+  <input class="postFields" type="text" name="title"></br>
+  <input class="postFields" type="file" name="chosenImage"/><br />  
+  <h4 class="postFields">Message</h4>
+  <textarea class="postFields" name="message" id="message" cols="50" rows="20"></textarea><br>
   <!--<label for="image">Image:</label>-->
   <!--<input type="image" alt="Choose"><br>-->
-  <label for="category">Category:</label>
-  <input type="text" name="category"><br>
+  <label class="postFields" for="category">Select a category</label>
+  <select class="postFields" name="category" id="category">
+  <option value="Watches">Watches</option>
+  <option value="Sunglasses">Sunglasses</option>
+  <option value="Home-interior">Home-interior</option>
+  </select></br>
   <!--<label for="date">Date:</label>-->
   <!--<input type="date" name="postdate"><br>-->
-  <input type="submit" name="publishBtn" value="publish" id="">
+  <input class="PublishPost" type="submit" name="publishBtn" value="publish" id="">
 </form>';
 
 

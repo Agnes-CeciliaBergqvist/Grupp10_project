@@ -45,19 +45,20 @@
      
 </header>
 
+<div class="homepage">
 
 <?php
 session_start();
 
 if(isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] != "") {
-  echo '<h1>Welcome '.$_SESSION['sess_user_name'].'</h1>';
+  echo '<h1 class="Welcome">Welcome '.$_SESSION['sess_user_name'].'!</h1>';
 
   if(isset($_SESSION['sess_role']) && $_SESSION['sess_role'] == "admin") {
-    echo "Du är inloggad som <b>Admin</b><br />";
+    echo "<p class='InloggedAs'>Du är inloggad som <b>Admin</b></p><br />";
 
-    echo 'Do you want to publish something? <a href="posts.php">Click here!</a> <br>';
+    echo '<p class="publishsomething">Do you want to publish something? <a href="posts.php">Click here!</a></p> <br>';
   }
-    echo 'Do you want to see all existing posts? <a href="viewPosts.php">Click here!</a>';
+    echo '<p class="Seeposts">Do you want to see all existing posts? <a href="viewPosts.php">Click here!</a></p>';
         
 
 
@@ -67,7 +68,7 @@ if(isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] != "") {
 }
 ?>
    
-
+   </div>
 
    <footer id="footer">
      <div id="footer-container">

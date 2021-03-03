@@ -5,13 +5,19 @@ include("database_connection.php");
 $msg ="";
 
    $username = $_POST['username'];
+   $email = $_POST['email'];
 
    $stm = $db->prepare("SELECT count(username) FROM users WHERE username=:username_IN");
    $stm->bindParam(":username_IN", $username);
    $stm->execute();
    $return = $stm->fetch();
 
-   if($return[0] == 0) {
+   $stmt = $db->prepare("SELECT count(email) FROM users WHERE email=:email_IN");
+   $stmt->bindParam(":email_IN", $email);
+   $stmt->execute();
+   $returnM = $stmt->fetch();
+
+   if($return[0] == 0 && $returnM[0] == 0) {
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -38,8 +44,11 @@ $msg ="";
         
     } 
    
+   else if($return[0] == 0 && $returnM[0] != 0) {
+       echo "This Email is already registered!";
+   }
    else {
-       echo "This username already exists!";
+       echo "This username is already taken!";
    }
 
 

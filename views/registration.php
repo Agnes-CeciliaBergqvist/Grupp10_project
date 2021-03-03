@@ -36,19 +36,19 @@
 
 
 <?php
-echo date('d-m-y h:i:s');
+//echo date('d-m-y h:i:s');
 ?>
 
 <!-- Information from the new user for registration -->
-
+<div class="registration">
 <form method="POST" action="../includes/handleRegistration.php">
-<input type="text" placeholder="Insert Username..." name="username"><br>
-<input type="email" placeholder="Insert E-mail" name="email"><br>
-<input type="password" placeholder="Insert Password..." name="password"><br>
-<input type="submit" value="Register!">
+<input class ="regFields" type="text" placeholder="Insert Username..." name="username"><br>
+<input class ="regFields"type="email" placeholder="Insert E-mail" name="email"><br>
+<input class ="regFields"type="password" placeholder="Insert Password..." name="password"><br>
+<input class ="regBtn" type="submit" value="Register!">
 </form>
-
-Already registered ? <a href='login.php'> Login </a>
+</div>
+<p class="AlreadyReg">Already registered ? <a href='login.php'> Login </a></p>
 
 
 <footer id="footer">

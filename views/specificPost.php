@@ -110,7 +110,7 @@ function show(){
 }
 </script>
 
-<h3><a href="../views/viewPosts.php">Back to all posts!</a></h3>
+<h3 class="backToPosts"><a href="../views/viewPosts.php">Back to all posts!</a></h3>
 
 </main>
 <footer id="footer">

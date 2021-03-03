@@ -9,7 +9,14 @@ include("../includes/database_connection.php");
 if (isset($_GET["delete_id"])) {
     $deleteID = $_GET['delete_id'];
     
-    //Deleting and updating the database
+
+    //Deleting comments from the post 
+    $stmt = $db->query("DELETE FROM comments WHERE postId = $deleteID");
+    if($stmt->execute()) {
+    } else {
+        echo "is not deleted";
+    } 
+    //Deleting the post and updating the database
     $stm = $db->query("DELETE FROM posts WHERE id = $deleteID");
     
     if($stm->execute()) {

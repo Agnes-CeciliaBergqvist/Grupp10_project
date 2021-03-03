@@ -35,7 +35,7 @@
 
 }
 
-#nav-bar-a {
+#nav-bar a {
     text-decoration: none;
     color: #b7b7b7;
     padding: 14px 20px;
@@ -58,7 +58,207 @@
     align-items:flex-start;
 } */
 
+/*Style för login*/
 
+.enterLogin {
+    margin-bottom: 1vw;
+    font-size: 2.5vw;
+}
+
+.loginFields {
+    padding: 0.8vw;
+    width: 25vw;
+    margin-bottom: 0.3vw;
+    margin-top: 0.8vw;
+}
+
+.notmember a {
+    text-decoration: none;
+    color: darkgrey;
+}
+
+.notmember a:hover {
+    font-size: 1.5vw;
+    text-decoration: underline;
+}
+
+.loginBtn {
+    padding: 0.5vw;
+    width: 7vw;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/*Style för registration*/
+
+.registration {
+    text-align: center;
+    margin-top: 2.5vw;
+
+}
+
+.regFields {
+    padding: 1.2vw;
+    width: 28vw;
+    margin-bottom: 0.8vw;
+    
+}
+
+.regBtn {
+    padding: 0.5vw;
+    width: 7vw;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.AlreadyReg a {
+    text-decoration: none;
+    color: darkgrey;
+}
+
+.AlreadyReg a:hover {
+    font-size: 1.5vw;
+    text-decoration: underline;
+}
+
+/*Style för startsida*/
+
+.homepage {
+    text-align: center;
+    padding: 1vw;
+}
+
+.homepage a {
+    color: darkgrey;
+    text-decoration: none;
+}
+
+.homepage a:hover {
+    font-size: 1.5vw;
+    text-decoration: underline;
+}
+
+.Welcome {
+   
+    padding-right: 6vw;
+    padding-bottom: 2vw;
+}
+
+
+.InloggedAs {
+   color: darkgrey;
+}
+
+.publishsomething {
+    padding-bottom: 0.2vw;
+}
+
+.Seeposts {
+    padding-bottom: 0.5vw;
+}
+
+/*Styling för skapande av inlägg*/
+.makePost {
+    text-align: center;
+}
+.newPost {
+    margin-bottom: 2vw;
+    font-size: 2.5vw;
+}
+
+.WelcomePosts {
+    margin-top: 2vw;
+    text-align: center;
+    margin-right: 8vw;
+    margin-bottom: 2vw;
+}
+
+.logoutPosts a {
+    color: darkgrey;
+    text-decoration: none;
+    padding-left: 1.5vw;
+}
+
+.logoutPosts a:hover {
+    font-size: 1.5vw;
+    text-decoration: underline;
+}
+
+.postFields {
+    margin-bottom: 1vw;
+    padding: 0.4vw;
+    font-size: 1.5vw;
+}
+
+.PublishPost {
+    padding: 1vw;
+    width: 15vw;
+    border: 1px solid lightgrey;
+    border-radius: 7px;
+    cursor: pointer;
+    margin-top: 2vw;
+    font-size: 1.5vw;
+}
+
+/*Styling för blogginlägg*/
+.blogEntries {
+    font-size: 1vw;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    border: 0.05vw solid lightgrey;
+    box-shadow: 0.25vw 0.25vw #E3F0F0;
+    width: 65vw;
+    margin-bottom: 4vw;
+    /*margin-left: 10vw;*/
+    margin-top: 5vw;
+    
+
+
+}
+
+.blogEntries1 {
+    font-size: 1vw;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    border: 0.05vw solid lightgrey;
+    box-shadow: 0.25vw 0.25vw #E3F0F0;
+    width: 65vw;
+    margin-bottom: 1vw;
+    margin-top: 5vw;
+}
+
+.adminBtns {
+    display:flex;
+    flex-direction: column;
+    margin-top: 0.5vw;
+    
+}
+
+.postLinks a {
+    color: darkgrey;
+    text-align: center;
+    font-size: 1.5vw;
+    margin-bottom: 0.5vw;
+}
+
+.postLinks a:hover {
+    color: grey;
+    text-decoration: none;
+    font-size: 2vw;
+}
+
+#welcomeMessage{
+    display:flex;
+    justify-content: center;
+ }
+
+ /* Styling för comment-page */
 #CommentPage {
     display: flex;
     justify-content: center;
@@ -119,49 +319,18 @@
 
 
 }
-.blogEntries {
-    font-size: 1vw;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items:center;
-    border: 0.05vw solid lightgrey;
-    box-shadow: 0.25vw 0.25vw #E3F0F0;
-    width: 65vw;
-    margin-bottom: 4vw;
-    /*margin-left: 10vw;*/
-    margin-top: 5vw;
-    
+ .backToPosts a { 
+     color: darkgrey;
+     text-decoration: none;
+     
+ }
 
+ .backToPosts a:hover {
+    color: grey;
+    text-decoration: none;
+    font-size: 2vw;
+ }
 
-}
-
-.blogEntries1 {
-    font-size: 1vw;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items:center;
-    border: 0.05vw solid lightgrey;
-    box-shadow: 0.25vw 0.25vw #E3F0F0;
-    width: 65vw;
-    margin-bottom: 1vw;
-    margin-top: 5vw;
-   
-
-
-}
-
-.adminBtns {
-    display:flex;
-    flex-direction: column;
-    
-}
-
-#welcomeMessage{
-   display:flex;
-   justify-content: center;
-}
 
 
 .hide {
