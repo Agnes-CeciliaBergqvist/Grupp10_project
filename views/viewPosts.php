@@ -9,7 +9,7 @@
     <title>Document</title>
 
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <link href="../CSS/style.css" rel="stylesheet" type="text/css"/>
+      
     <script src="../JavaScript/Js.js" defer></script>
 
 
