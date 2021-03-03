@@ -40,35 +40,63 @@
     align-items:flex-start;
 } */
 
-.comments{
-    display:flex;
+
+#CommentPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    margin: 5vw;
+}
+
+.comments {
+    padding-bottom: 2.5vw;
+    border-bottom: 1px solid lightgrey;
+    padding: 2vw;
     
    
 }
 
 .commentBox {
-    border: 0.20vw solid lightblue;
-    box-shadow: 0.4vw 0.4vw #E3F0F0;
-    width: 20vw;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 65vw;
+    border: 0.05vw solid lightgrey;
+    box-shadow: 0.25vw 0.25vw #E3F0F0;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    height: auto;
+    text-align: center;
+    /*overflow-y: scroll;
+    scrollbar-color: rebeccapurple green;
+    scrollbar-width: thin;*/
+    
+    
 }
+
+
 
 .leaveAComment {
     display:flex;
     justify-content: center;
     align-items: center;
     margin-left: 2vw;
-    border: 0.20vw solid lightblue;
-    box-shadow: 0.4vw 0.4vw #E3F0F0;
+    /*border: 0.20vw solid lightblue;*/
+    /*box-shadow: 0.4vw 0.4vw #E3F0F0;*/
     padding: 5vw;
     margin-top: 2vw; 
+    width: 65vw;
+    height: 20vw;
+    /*border: 0.05vw solid lightgrey;
+    box-shadow: 0.25vw 0.25vw #E3F0F0;*/
+
 }
 .entryWithComment{
     display:flex;
     align-items:center;
     flex-wrap: wrap;
     justify-content: center;
+    flex-direction: column;
    
 
 
@@ -79,13 +107,29 @@
     flex-direction: column;
     justify-content: center;
     align-items:center;
-    border: 0.25vw solid lightblue;
-    box-shadow: 0.5vw 0.5vw #E3F0F0;
-    width:40vw;
+    border: 0.05vw solid lightgrey;
+    box-shadow: 0.25vw 0.25vw #E3F0F0;
+    width: 65vw;
     margin-bottom: 4vw;
-    margin-left: 5vw;
+    /*margin-left: 10vw;*/
     margin-top: 5vw;
-    padding: 4vw;
+    
+
+
+}
+
+.blogEntries1 {
+    font-size: 1vw;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    border: 0.05vw solid lightgrey;
+    box-shadow: 0.25vw 0.25vw #E3F0F0;
+    width: 65vw;
+    margin-bottom: 1vw;
+    margin-top: 5vw;
+   
 
 
 }
@@ -99,5 +143,83 @@
 #welcomeMessage{
    display:flex;
    justify-content: center;
+}
+
+.hide {
+    display: none;
+}
+
+#postId {
+    display: none; 
+}
+
+#userId {
+    display: none; 
+}
+
+.Headline {
+    font-size: 3vw;
+    font-weight: 700;
+    margin-bottom: 2.5vw;
+    margin-top: 2vw;
+    text-align: center;
+
+}
+
+#entryTitle {
+    margin-bottom: 3vw;
+    margin-top: 3vw;
+    font-size: 5vw;
+}
+
+#entryMessage {
+    font-size: 1.5vw;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+
+#entryCategory {
+    font-size: 1vw;
+    margin-bottom: 1vw;
+}
+
+#entryPublished {
+    margin-bottom: 2vw;
+
+}
+
+#commentBtn {
+    padding: 2vw;
+    border-radius: 10px;
+    width: 15vw;
+    border: 1px solid grey;
+}
+
+#commentArea {
+width: 40vw;
+height: 12vw;
+padding: 1vw;
+border: 1px solid grey; 
+border-radius: 10px;
+margin-bottom: 0.5vw;
+}
+
+#publishBtn {
+    padding: 0.5vw;
+    border-radius: 10px;
+    width: 10vw;
+    border: 1px solid grey;
+    align-items: center;
+}
+
+#commentPostId {
+    display: none;
+}
+#commentId {
+    display: none;
+
+}
+#commentUserId {
+    display: none;
 }
 
