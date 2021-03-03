@@ -36,7 +36,7 @@ if(isset($_POST['publishBtn']) && move_uploaded_file($_FILES['chosenImage']['tmp
     $title = $_POST['title'];
     $message = $_POST['message'];
     $category = $_POST['category'];
-    $date = date('d-m-y h:i:s');
+    $date = date('y-m-d h:i:s');
     
     //$date = $_POST['postdate'];
 

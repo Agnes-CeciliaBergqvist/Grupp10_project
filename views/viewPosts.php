@@ -46,7 +46,7 @@
 </div> <!-- #header-name -->
  
 </header>
-
+<main id="CommentPage">
 <?php 
 session_start();
 include("../includes/database_connection.php");
@@ -68,7 +68,7 @@ while ($row = $stm->fetch()) {
   }
   echo "</div>";
 
-  echo "<div class='commentBox'>";
+   "<div class='commentBox'>";
 
   echo "</div>";
  
@@ -81,7 +81,7 @@ echo "</div>";
 
   
   
-  
+</main>
 
 
 
