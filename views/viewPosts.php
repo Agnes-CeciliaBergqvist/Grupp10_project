@@ -67,7 +67,9 @@ while ($row = $stm->fetch()) {
   echo "<a href='../views/edit.php?id=$postId'>Edit</a></div>";  
   }
   echo "</div>";
+
   echo "<div class='commentBox'>";
+
   echo "</div>";
  
 }
@@ -80,6 +82,7 @@ echo "</div>";
   
   
   
+
 
 
 <footer id="footer">
@@ -114,6 +117,7 @@ echo "</div>";
        </div>
      </div>
   </footer>
+
 
 </body>
 </html>
