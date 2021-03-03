@@ -192,10 +192,6 @@ p,
     #header {
         width: auto; 
     }
-}
-
-
-@media screen and (min-width: 425px) { 
     h1 {
         margin-left: 5rem;
 }
