@@ -46,13 +46,13 @@
 </div> <!-- #header-name -->
  
 </header>
-
+<main id="CommentPage">
 <?php 
 session_start();
 include("../includes/database_connection.php");
 echo "<h1 id='welcomeMessage'> You are logged in as " . $_SESSION['sess_user_name']. "! </h1>";
 
-$stm = $db->query("SELECT id, userId, title, image, message, category, date  FROM posts");
+$stm = $db->query("SELECT id, userId, title, image, message, category, date  FROM posts ORDER BY date DESC");
 echo "<div id='allPosts'>";
 
 //Choosing the row with id and link to delete and edit with the bloggID=ID
@@ -68,7 +68,7 @@ while ($row = $stm->fetch()) {
   }
   echo "</div>";
 
-  echo "<div class='commentBox'>";
+   "<div class='commentBox'>";
 
   echo "</div>";
  
@@ -81,7 +81,7 @@ echo "</div>";
 
   
   
-  
+</main>
 
 
 
