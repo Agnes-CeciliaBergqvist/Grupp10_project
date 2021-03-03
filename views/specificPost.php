@@ -71,9 +71,9 @@ echo "<div class ='entryWithComment'>";
   <h2 class='Headline'>Comments:</h2>
   
 <?php
-$stmt = $db->query("SELECT id, postId, user_Id, message, date FROM comments WHERE postId = $id");
+$stmt = $db->query("SELECT id, postId, userId, message, date FROM comments WHERE postId = $id");
 while($row = $stmt->fetch()) {
-    echo "<div class='comments'> <p id='commentId'> Comment ID: " . $row['id'] . "</p> <p id='commentPostId'> Post ID: " . $row['postId'] . "</p><p id='usercomment'> By: " . $_SESSION['sess_user_name'] . "</p><h2 id='commentUserId'> " . $row['user_Id'] . "</h2><p id='commentMessage'>" . $row['message'] . "</p> <p id='commentDate'> Published: " . $row['date'] . "</p> </div>";
+    echo "<div class='comments'> <p id='commentId'> Comment ID: " . $row['id'] . "</p> <p id='commentPostId'> Post ID: " . $row['postId'] . "</p><p id='usercomment'> By: " . $_SESSION['sess_user_name'] . "</p><h2 id='commentUserId'> " . $row['userId'] . "</h2><p id='commentMessage'>" . $row['message'] . "</p> <p id='commentDate'> Published: " . $row['date'] . "</p> </div>";
 }
 echo "</div>";
 
