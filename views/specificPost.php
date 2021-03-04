@@ -80,8 +80,8 @@ $stmt = $db->query("SELECT commentId, postId, userId, message, username, date FR
 while($row = $stmt->fetch()) {
     echo "<div class='comments'> <p id='commentId'> Comment ID: " . $row['commentId'] . "</p> <p id='commentPostId'> Post ID: " . $row['postId'] . "</p><p id='usercomment'> By: " . $row['username'] . "</p><h2 id='commentUserId'> " . $row['userId'] . "</h2><p id='commentMessage'>" . $row['message'] . "</p> <p id='commentDate'> Published: " . $row['date'] . "</p> </div>";
 
-  $adminCommentId = $row['id'];
-  $userCommentId = $row['id'];
+  $adminCommentId = $row['commentId'];
+  $userCommentId = $row['commentId'];
     
     if (isset($_SESSION['sess_role']) && $_SESSION['sess_role'] == "admin"){ 
 

@@ -54,6 +54,26 @@ session_start();
 include("../includes/database_connection.php");
 echo "<h1 id='welcomeMessage'> You are logged in as " . $_SESSION['sess_user_name']. "! </h1>";
 
+echo "Filter posts by catergor:";
+?>
+
+<form action="viewPosts.php" method="GET">
+<select class="postFields" name="category" id="category">
+  <option value="All">Everything</option>  
+  <option value="Watches">Watches</option>
+  <option value="Sunglasses">Sunglasses</option>
+  <option value="Home-interior">Home-interior</option>
+</select></br>
+<input type="submit" value="filter!">
+</form>
+
+<?php
+
+$filterCat = $_GET['category'];
+
+
+if($filterCat == "All") {
+Echo "You are curently seeing all posts!";
 $stm = $db->query("SELECT id, userId, title, image, message, category, date  FROM posts ORDER BY date DESC");
 echo "<div id='allPosts'>";
 
@@ -76,7 +96,82 @@ while ($row = $stm->fetch()) {
  
 }
 echo "</div>";
+}
+else if($filterCat == "Watches") {
+  Echo "You are curently looking at posts from the category: <h1> $filterCat!</h1>";
+  $stm = $db->query("SELECT id, userId, title, image, message, category, date FROM posts WHERE category = 'Watches' ORDER BY date DESC");
+echo "<div id='allPosts'>";
 
+//Choosing the row with id and link to delete and edit with the bloggID=ID
+while ($row = $stm->fetch()) {
+  $postId = $row['id'];
+  
+  echo "<div class ='entryWithComment'> <div class='blogEntries'> <p id='postId'> Post ID: " . $row['id'] . "</p> <p id='userId'> Publisher ID: " . $row['userId'] . "</p> <h2 id='entryTitle'> " . $row['title'] . '</h2> <p id="enrtyImage"><img src="../includes/' . $row['image'] . '" "height=200 width=300"/></p>' . "<p id='entryMessage'>" . $row['message'] . "</p> <p id='entryCategory'> Category: " . $row['category'] . "</p> <p id='entryPublished'> Published: " . $row['date'] . " </p>" ;
+  //Checks if you are logged in as a user or a admin
+  echo "<div class='postLinks'><a href='specificPost.php?id=$postId' > Go to Comments!  </a>";
+  if(isset($_SESSION['sess_role']) && $_SESSION['sess_role'] == "admin"){
+  echo "<div class='Btns'><div class='deleteBtn'> <a href='../includes/handleDelete.php?delete_id=$postId'>Delete</a></div>" ;
+  echo "<div class='editBtn'><a href='../views/edit.php?id=$postId'>Edit</a></div></div></div>";  
+  }
+  echo "</div>";
+
+   "<div class='commentBox'>";
+
+  echo "</div>";
+ 
+}
+echo "</div>";
+}
+else if($filterCat == "Sunglasses") {
+  Echo "You are curently looking at posts from the category: <h1> $filterCat!</h1>";
+  $stm = $db->query("SELECT id, userId, title, image, message, category, date  FROM posts WHERE category = 'Sunglasses' ORDER BY date DESC");
+echo "<div id='allPosts'>";
+
+//Choosing the row with id and link to delete and edit with the bloggID=ID
+while ($row = $stm->fetch()) {
+  $postId = $row['id'];
+  
+  echo "<div class ='entryWithComment'> <div class='blogEntries'> <p id='postId'> Post ID: " . $row['id'] . "</p> <p id='userId'> Publisher ID: " . $row['userId'] . "</p> <h2 id='entryTitle'> " . $row['title'] . '</h2> <p id="enrtyImage"><img src="../includes/' . $row['image'] . '" "height=200 width=300"/></p>' . "<p id='entryMessage'>" . $row['message'] . "</p> <p id='entryCategory'> Category: " . $row['category'] . "</p> <p id='entryPublished'> Published: " . $row['date'] . " </p>" ;
+  //Checks if you are logged in as a user or a admin
+  echo "<div class='postLinks'><a href='specificPost.php?id=$postId' > Go to Comments!  </a>";
+  if(isset($_SESSION['sess_role']) && $_SESSION['sess_role'] == "admin"){
+  echo "<div class='Btns'><div class='deleteBtn'> <a href='../includes/handleDelete.php?delete_id=$postId'>Delete</a></div>" ;
+  echo "<div class='editBtn'><a href='../views/edit.php?id=$postId'>Edit</a></div></div></div>";  
+  }
+  echo "</div>";
+
+   "<div class='commentBox'>";
+
+  echo "</div>";
+ 
+}
+echo "</div>";
+}
+else if($filterCat == "Home-interior"){
+  Echo "You are curently looking at posts from the category: <h1> $filterCat!</h1>";
+  $stm = $db->query("SELECT id, userId, title, image, message, category, date FROM posts WHERE category = 'Home-interior' ORDER BY date DESC");
+echo "<div id='allPosts'>";
+
+//Choosing the row with id and link to delete and edit with the bloggID=ID
+while ($row = $stm->fetch()) {
+  $postId = $row['id'];
+  
+  echo "<div class ='entryWithComment'> <div class='blogEntries'> <p id='postId'> Post ID: " . $row['id'] . "</p> <p id='userId'> Publisher ID: " . $row['userId'] . "</p> <h2 id='entryTitle'> " . $row['title'] . '</h2> <p id="enrtyImage"><img src="../includes/' . $row['image'] . '" "height=200 width=300"/></p>' . "<p id='entryMessage'>" . $row['message'] . "</p> <p id='entryCategory'> Category: " . $row['category'] . "</p> <p id='entryPublished'> Published: " . $row['date'] . " </p>" ;
+  //Checks if you are logged in as a user or a admin
+  echo "<div class='postLinks'><a href='specificPost.php?id=$postId' > Go to Comments!  </a>";
+  if(isset($_SESSION['sess_role']) && $_SESSION['sess_role'] == "admin"){
+  echo "<div class='Btns'><div class='deleteBtn'> <a href='../includes/handleDelete.php?delete_id=$postId'>Delete</a></div>" ;
+  echo "<div class='editBtn'><a href='../views/edit.php?id=$postId'>Edit</a></div></div></div>";  
+  }
+  echo "</div>";
+
+   "<div class='commentBox'>";
+
+  echo "</div>";
+ 
+}
+echo "</div>";
+}
   ?>
   
 

@@ -8,7 +8,7 @@ include("../includes/database_connection.php");
 $id = $_GET['id'];
 $delete_comment = $_GET['userDeleteComment_id'];
 
-$userId = $_session['sess_user_id'];
+$userId = $_SESSION['sess_user_id'];
 
 if (isset($_SESSION['sess_role']) && $_SESSION['sess_role'] == "admin"){
     $adminCommentId = $_GET['adminDeleteComment_id'];
@@ -22,7 +22,7 @@ if (isset($_SESSION['sess_role']) && $_SESSION['sess_role'] == "admin"){
 
 } else {
 
-    $stm = $db->query("DELETE FROM comments WHERE id = $delete_comment");
+    $stm = $db->query("DELETE FROM comments WHERE commentId = $delete_comment");
 
     if($stm->execute()) {
         header("location:../views/specificPost.php?id=$id");
