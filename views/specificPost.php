@@ -72,14 +72,16 @@ echo "<div class ='entryWithComment'>";
   <h2 class='Headline'>Comments:</h2>
   
 <?php
-$stmt = $db->query("SELECT * FROM comments WHERE postId = $id ORDER BY date DESC");
+
+$stmt = $db->query("SELECT commentId, postId, userId, message, username, date FROM comments
+                    JOIN users AS u ON comments.commentId = u.id 
+                    WHERE postId = $id ORDER BY date DESC");
 
 while($row = $stmt->fetch()) {
+    echo "<div class='comments'> <p id='commentId'> Comment ID: " . $row['commentId'] . "</p> <p id='commentPostId'> Post ID: " . $row['postId'] . "</p><p id='usercomment'> By: " . $row['username'] . "</p><h2 id='commentUserId'> " . $row['userId'] . "</h2><p id='commentMessage'>" . $row['message'] . "</p> <p id='commentDate'> Published: " . $row['date'] . "</p> </div>";
 
   $adminCommentId = $row['id'];
   $userCommentId = $row['id'];
-
-    echo "<div class='comments'> <p id='commentId'> Comment ID: " . $row['id'] . "</p> <p id='commentPostId'> Post ID: " . $row['postId'] . "</p><p id='usercomment'> By: " . $row['userId'] . "</p><h2 id='commentUserId'> " . $row['userId'] . "</h2><p id='commentMessage'>" . $row['message'] . "</p> <p id='commentDate'> Published: " . $row['date'] . "</p>";
     
     if (isset($_SESSION['sess_role']) && $_SESSION['sess_role'] == "admin"){ 
 
@@ -92,6 +94,7 @@ while($row = $stmt->fetch()) {
     }
     
     echo "</div>";
+
 }
 echo "</div>";
 
