@@ -79,18 +79,19 @@ while($row = $stmt->fetch()) {
   $adminCommentId = $row['id'];
   $userCommentId = $row['id'];
 
-    echo "<div class='comments'> <p id='commentId'> Comment ID: " . $row['id'] . "</p> <p id='commentPostId'> Post ID: " . $row['postId'] . "</p><p id='usercomment'> By: " . $row['userId'] . "</p><h2 id='commentUserId'> " . $row['userId'] . "</h2><p id='commentMessage'>" . $row['message'] . "</p> <p id='commentDate'> Published: " . $row['date'] . "</p> </div>";
+    echo "<div class='comments'> <p id='commentId'> Comment ID: " . $row['id'] . "</p> <p id='commentPostId'> Post ID: " . $row['postId'] . "</p><p id='usercomment'> By: " . $row['userId'] . "</p><h2 id='commentUserId'> " . $row['userId'] . "</h2><p id='commentMessage'>" . $row['message'] . "</p> <p id='commentDate'> Published: " . $row['date'] . "</p>";
     
     if (isset($_SESSION['sess_role']) && $_SESSION['sess_role'] == "admin"){ 
 
-      echo "<a href='../includes/deleteCommet.php?id=$id&adminDeleteComment_id=$adminCommentId'>Delete</a>";
+      echo "<div class='deleteComment'><a href='../includes/deleteCommet.php?id=$id&adminDeleteComment_id=$adminCommentId'>Delete</a></div>";
       
     }else if(isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] == $row['userId']){
 
-      echo "<a href='../includes/deleteCommet.php?id=$id&userDeleteComment_id=$userCommentId'>Delete</a>";
+      echo "<div><a href='../includes/deleteCommet.php?id=$id&userDeleteComment_id=$userCommentId'>Delete</a></div>";
       
     }
     
+    echo "</div>";
 }
 echo "</div>";
 

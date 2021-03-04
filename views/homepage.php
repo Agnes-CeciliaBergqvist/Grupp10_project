@@ -75,7 +75,7 @@ if(isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] != "") {
 }
 ?>
    
-   
+</div>
 
    <footer id="footer">
      <div id="footer-container">
@@ -110,7 +110,7 @@ if(isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] != "") {
 
 
        </div>
-     </div>
+     
 
 
   </footer>
