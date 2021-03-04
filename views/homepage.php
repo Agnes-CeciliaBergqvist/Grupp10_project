@@ -49,6 +49,11 @@
      
 </header>
 
+<div class="header-img">
+  <h2 class="header-text">WELCOME TO THE BLOG</h2>
+    <p>Please help us to get better and comment on our blog posts!</p>
+</div>
+
 <div class="homepage">
 
 <?php
@@ -70,7 +75,7 @@ if(isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] != "") {
 }
 ?>
    
-   </div>
+   
 
    <footer id="footer">
      <div id="footer-container">

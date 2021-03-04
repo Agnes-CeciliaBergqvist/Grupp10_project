@@ -49,6 +49,28 @@
     display: none;
 }
 
+.header-img {
+    background-image: url(../includes/images/BACKGROUND.jpg);
+    height: 70vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: -1rem; 
+}
+.header-img h2 {
+    color: #253b4d; 
+    text-align: center;
+    font-family: 'Candal', serif;
+}
+
+.header-img p {
+    text-align: center;
+    font-family: 'Candal', serif;
+}
+
+.header-text {
+    margin-top: 2rem; 
+}
+
 
 /* Commets and posts style starts here */
 
