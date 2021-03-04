@@ -38,6 +38,7 @@
         </div> <!-- #nav-bar -->      
       </div> <!-- .container -->
     </div> <!-- #header-name -->
+    <h4 class="logoutPosts"><a href="../includes/handleLogout.php">Logout</a></h4>
   </header>
  <main id="CommentPage">
 <?php 
