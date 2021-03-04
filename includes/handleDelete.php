@@ -26,4 +26,7 @@ if (isset($_GET["delete_id"])) {
         echo "is not deleted";
     } 
 }
+
+
+
 ?>
