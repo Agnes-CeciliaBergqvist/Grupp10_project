@@ -42,7 +42,7 @@
     </div> <!-- #nav-bar -->      
   </div> <!-- .container -->
 </div> <!-- #header-name -->
- 
+<h4 class="logoutPosts"><a href="../includes/handleLogout.php">Logout</a></h4>
 </header>
 
 <?php 
@@ -52,7 +52,7 @@ include("../includes/database_connection.php");
 //check if the user is logged in
 if(isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] != "") {
   echo '<h1 class="WelcomePosts">Welcome '.$_SESSION['sess_user_name'].'!</h1>';
-  echo '<h4 class="logoutPosts"><a href="../includes/handleLogout.php">Logout</a></h4>';
+  
   
   // You are only able to make posts if you are logged in!
   

@@ -411,6 +411,12 @@ margin-bottom: 0.5vw;
     display: none;
 }
 
+/*Style for logout button*/
+ #logout a{
+    text-decoration: none;
+    color: #b7b7b7;
+}
+
 
 
 /* Footer CSS starts here */
