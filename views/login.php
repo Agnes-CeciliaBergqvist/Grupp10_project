@@ -54,10 +54,10 @@
 <input class="loginFields" type="password" name="password">
 <br><br>
 <input class ="loginBtn" type="submit" name="loginBtn" value="login">
-
+<p class="notmember">Not a member ? <a href="registration.php"> Register now!<a></p>
 </form> 
 
-<p class="notmember">Not a member ? <a href="registration.php"> Register now!<a></p>
+
 
 
 <footer id="footer">

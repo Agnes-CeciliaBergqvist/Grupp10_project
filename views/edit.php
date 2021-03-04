@@ -55,9 +55,15 @@ if (isset($_GET['id'])) {
         $category = $row['category'];
     }
     ?>
+
+    <!-- Behöver vi denna koden????  -->
+
+
 <!-- //Form for updating the exsisting post -->
-<form method="POST" action ="../includes/handleEdit.php?">
-<input type="hidden" name="id" value="<?php echo $post_id; ?>"/>
+<!-- <form method="POST" action ="../includes/handleEdit.php?">
+<input type="hidden" name="id" value=" echo $post_id; ?>"/> -->
+
+
 <?php
         
     }

@@ -41,14 +41,16 @@
 
 <!-- Information from the new user for registration -->
 <div class="registration">
+<h3 class="enterLogin" align="center">Registrate below!</h3>
 <form method="POST" action="../includes/handleRegistration.php">
 <input class ="regFields" type="text" placeholder="Insert Username..." name="username"><br>
 <input class ="regFields"type="email" placeholder="Insert E-mail" name="email"><br>
 <input class ="regFields"type="password" placeholder="Insert Password..." name="password"><br>
 <input class ="regBtn" type="submit" value="Register!">
 </form>
-</div>
 <p class="AlreadyReg">Already registered ? <a href='login.php'> Login </a></p>
+</div>
+
 
 
 <footer id="footer">
