@@ -38,12 +38,21 @@
                 <a class="nav-bar-a" href="../views/viewPosts.php">Posts</a>
               </ul>
             </div>
-
-        </div> <!-- #nav-bar -->      
+            
+        </div> <!-- #nav-bar --> 
+          
       </div> <!-- .container -->
     </div> <!-- #header-name -->
+
+    <h4 class="logoutPosts"><a href="../includes/handleLogout.php">Logout</a></h4> 
+   
      
 </header>
+
+<div class="header-img">
+  <h2 class="header-text">WELCOME TO THE BLOG</h2>
+    <p>Please help us to get better and comment on our blog posts!</p>
+</div>
 
 <div class="homepage">
 
@@ -60,15 +69,13 @@ if(isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] != "") {
   }
     echo '<p class="Seeposts">Do you want to see all existing posts? <a href="viewPosts.php">Click here!</a></p>';
         
-
-
-  echo '<h4><a href="../includes/handleLogout.php">Logout</a></h4>';
+  
 } else { 
   echo "Vänligen logga in igen <a href='login.php'>login</a>";
 }
 ?>
    
-   </div>
+</div>
 
    <footer id="footer">
      <div id="footer-container">
@@ -103,7 +110,7 @@ if(isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] != "") {
 
 
        </div>
-     </div>
+     
 
 
   </footer>

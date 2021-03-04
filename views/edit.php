@@ -31,7 +31,7 @@
         </div> <!-- #nav-bar -->      
       </div> <!-- .container -->
     </div> <!-- #header-name -->
-     
+    <h4 class="logoutPosts"><a href="../includes/handleLogout.php">Logout</a></h4>   
 </header>
 
 
@@ -54,25 +54,21 @@ if (isset($_GET['id'])) {
         $message = $row['message'];
         $category = $row['category'];
     }
-    ?>
-<!-- //Form for updating the exsisting post -->
-<form method="POST" action ="../includes/handleEdit.php?">
-<input type="hidden" name="id" value="<?php echo $post_id; ?>"/>
-<?php
+   
         
     }
 
     if(isset($_SESSION['sess_role']) && $_SESSION['sess_role'] == "admin") {
      ?>  
-        <form method="POST" action ="../includes/handleEdit.php?">
+        <form class="editPage" method="POST" action ="../includes/handleEdit.php?">
         <input type="hidden" name="id" value="<?php echo $post_id; ?>"/><br />
-        <label for="title">Title:</label>
-        <input type="text" name="title" id="title" value="<?php echo $title; ?>"/><br />
-        <label for="newMessage">Message:</label>
-        <input type="textarea" name="newMessage" id="newMessage" value="<?php echo $message; ?>"/><br />
-        <label for="category">Category:</label>
-        <input type="text" name="category" id="category" value="<?php echo $category; ?>" /><br />
-        <input type="submit" name="edit_user" value="edit"> 
+        <label class="editFields" for="title"><b>Title:</label></b></br>
+        <input class="editFields" type="text" name="title" id="title" value="<?php echo $title; ?>"/><br />
+        <label class="editFields" for="newMessage"><b>Message:</b></label></br>
+        <input class="editFields" type="textarea" name="newMessage" id="newMessage" value="<?php echo $message; ?>"/><br />
+        <label class="editFields" for="category"><b>Category:</b></label></br>
+        <input class="editFields" type="text" name="category" id="category" value="<?php echo $category; ?>" /><br />
+        <input class="editpageBtn"  type="submit" name="edit_user" value="edit"> 
         </form>
     <?php
     }

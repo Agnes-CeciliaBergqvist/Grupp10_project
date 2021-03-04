@@ -44,7 +44,9 @@
     </div> <!-- #nav-bar -->      
   </div> <!-- .container -->
 </div> <!-- #header-name -->
- 
+
+<h4 class="logoutPosts"><a href="../includes/handleLogout.php">Logout</a></h4>
+
 </header>
 <main id="CommentPage">
 <?php 
@@ -63,8 +65,8 @@ while ($row = $stm->fetch()) {
   //Checks if you are logged in as a user or a admin
   echo "<div class='postLinks'><a href='specificPost.php?id=$postId' > Go to Comments!  </a>";
   if(isset($_SESSION['sess_role']) && $_SESSION['sess_role'] == "admin"){
-  echo "<div class='adminBtns'> <a href='../includes/handleDelete.php?delete_id=$postId'>Delete</a>" ;
-  echo "<a href='../views/edit.php?id=$postId'>Edit</a></div></div>";  
+  echo "<div class='Btns'><div class='deleteBtn'> <a href='../includes/handleDelete.php?delete_id=$postId'>Delete</a></div>" ;
+  echo "<div class='editBtn'><a href='../views/edit.php?id=$postId'>Edit</a></div></div></div>";  
   }
   echo "</div>";
 

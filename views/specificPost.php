@@ -38,6 +38,7 @@
         </div> <!-- #nav-bar -->      
       </div> <!-- .container -->
     </div> <!-- #header-name -->
+    <h4 class="logoutPosts"><a href="../includes/handleLogout.php">Logout</a></h4>
   </header>
  <main id="CommentPage">
 <?php 
@@ -45,14 +46,14 @@ include("../includes/database_connection.php");
 session_start();
 
 $id = $_GET['id'];
-$stm = $db->query("SELECT id, userId, title, image, message, category, date FROM posts WHERE id = $id");
+$stm = $db->query("SELECT * FROM posts WHERE id = $id");
 //echo "<div class ='entryWithComment'>";
 while($row = $stm->fetch() ){
 echo "<div class='blogEntries1'> <p id='postId'> Post ID: " . $row['id'] . "</p> <p id='userId'> Publisher ID: " . $row['userId'] . "</p> <h2 id='entryTitle'> " . $row['title'] . '</h2> <p id="enrtyImage"><img src="../includes/' . $row['image'] . '" "height=200 width=300"/></p>' . "<p id='entryMessage'>" . $row['message'] . "</p> <p id='entryCategory'> Category: " . $row['category'] . "</p> <p id='entryPublished'> Published: " . $row['date'] . " </p>" ;
 
 echo "</div>";
-
 }
+
 
 echo "<div class ='entryWithComment'>";
 ?>
@@ -71,12 +72,29 @@ echo "<div class ='entryWithComment'>";
   <h2 class='Headline'>Comments:</h2>
   
 <?php
+
 $stmt = $db->query("SELECT commentId, postId, userId, message, username, date FROM comments
                     JOIN users AS u ON comments.commentId = u.id 
                     WHERE postId = $id ORDER BY date DESC");
 
 while($row = $stmt->fetch()) {
     echo "<div class='comments'> <p id='commentId'> Comment ID: " . $row['commentId'] . "</p> <p id='commentPostId'> Post ID: " . $row['postId'] . "</p><p id='usercomment'> By: " . $row['username'] . "</p><h2 id='commentUserId'> " . $row['userId'] . "</h2><p id='commentMessage'>" . $row['message'] . "</p> <p id='commentDate'> Published: " . $row['date'] . "</p> </div>";
+
+  $adminCommentId = $row['id'];
+  $userCommentId = $row['id'];
+    
+    if (isset($_SESSION['sess_role']) && $_SESSION['sess_role'] == "admin"){ 
+
+      echo "<div class='deleteComment'><a href='../includes/deleteCommet.php?id=$id&adminDeleteComment_id=$adminCommentId'>Delete</a></div>";
+      
+    }else if(isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] == $row['userId']){
+
+      echo "<div><a href='../includes/deleteCommet.php?id=$id&userDeleteComment_id=$userCommentId'>Delete</a></div>";
+      
+    }
+    
+    echo "</div>";
+
 }
 echo "</div>";
 
