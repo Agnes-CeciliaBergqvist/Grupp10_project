@@ -64,11 +64,15 @@ echo "Filter posts by catergor:";
   <option value="Sunglasses">Sunglasses</option>
   <option value="Home-interior">Home-interior</option>
 </select></br>
-<input type="submit" value="filter!">
+<input type="submit" name="filterBtn" value="filter!">
 </form>
 
 <?php
-
+// if(isset($_POST['filterBtn'])) {
+//   $filterCat = $_GET['category'];
+// } else {
+//   $filterCat = "All";
+// }
 $filterCat = $_GET['category'];
 
 
@@ -172,6 +176,9 @@ while ($row = $stm->fetch()) {
 }
 echo "</div>";
 }
+
+
+
   ?>
   
 
