@@ -54,7 +54,7 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    background-image: url(../includes/images/BACKGROUND.jpg);
+    background-image: url(../includes/images/background.jpg);
     height: 70vh;
     background-size: cover;
     background-repeat: no-repeat;
@@ -383,7 +383,7 @@ margin-bottom: 2vw;
     border-radius: 5px;
     width: 7vw;
     text-align: center;
-    margin-left: 29vw;
+    margin-left: 27vw;
     
     
 }
