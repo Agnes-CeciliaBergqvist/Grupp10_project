@@ -94,7 +94,7 @@ while($row = $stmt->fetch()) {
       
     }else if(isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] == $row['userId']){
 
-      echo "<div><a href='../includes/deleteCommet.php?id=$id&userDeleteComment_id=$userCommentId'>Delete</a></div>";
+      echo "<div class='deleteComment'><a href='../includes/deleteCommet.php?id=$id&userDeleteComment_id=$userCommentId'>Delete</a></div>";
       
     }
     
