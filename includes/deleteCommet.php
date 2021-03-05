@@ -13,7 +13,7 @@ $userId = $_SESSION['sess_user_id'];
 if (isset($_SESSION['sess_role']) && $_SESSION['sess_role'] == "admin"){
     $adminCommentId = $_GET['adminDeleteComment_id'];
 
-    $stm = $db->query("DELETE FROM comments WHERE id = $adminCommentId");
+    $stm = $db->query("DELETE FROM comments WHERE commentId = $adminCommentId");
     if($stm->execute()) {
         header("location:../views/specificPost.php?id=$id");
         echo "Comment with ['$adminCommentId'] is deleted";

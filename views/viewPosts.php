@@ -64,12 +64,23 @@ echo "Filter posts by catergor:";
   <option value="Sunglasses">Sunglasses</option>
   <option value="Home-interior">Home-interior</option>
 </select></br>
-<input type="submit" value="filter!">
+<input type="submit" value="filter!" name="filterBtn">
 </form>
 
 <?php
 
-$filterCat = $_GET['category'];
+//Checks if there is a category chosen 
+
+ if (isset($_GET['filterBtn'])) {
+
+  $filterCat = $_GET['category'];
+
+  
+ }else {
+  $filterCat = "All"; 
+ }
+
+
 
 
 if($filterCat == "All") {
@@ -81,7 +92,7 @@ echo "<div id='allPosts'>";
 while ($row = $stm->fetch()) {
   $postId = $row['id'];
   
-  echo "<div class ='entryWithComment'> <div class='blogEntries'> <p id='postId'> Post ID: " . $row['id'] . "</p> <p id='userId'> Publisher ID: " . $row['userId'] . "</p> <h2 id='entryTitle'> " . $row['title'] . '</h2> <p id="enrtyImage"><img src="../includes/' . $row['image'] . '" "height=200 width=300"/></p>' . "<p id='entryMessage'>" . $row['message'] . "</p> <p id='entryCategory'> Category: " . $row['category'] . "</p> <p id='entryPublished'> Published: " . $row['date'] . " </p>" ;
+  echo "<div class ='entryWithComment'> <div class='blogEntries'> <p id='postId'> Post ID: " . $row['id'] . "</p> <p id='userId'> Publisher ID: " . $row['userId'] . "</p> <h2 id='entryTitle'> " . $row['title'] . '</h2> <p id="enrtyImage"><img src="../includes/' . $row['image'] . '" "height=200 width=300"/></p>' . "<p id='entryMessage'>" . $row['message'] . "</p> <p id='entryCategory'> Category: " . $row['category'] . "</p> <p id='entryPublished'> Published: " . $row['date'] . " </p>  " ;
   //Checks if you are logged in as a user or a admin
   echo "<div class='postLinks'><a href='specificPost.php?id=$postId' > Go to Comments!  </a>";
   if(isset($_SESSION['sess_role']) && $_SESSION['sess_role'] == "admin"){

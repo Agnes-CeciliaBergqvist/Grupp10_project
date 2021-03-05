@@ -49,7 +49,7 @@ $id = $_GET['id'];
 $stm = $db->query("SELECT * FROM posts WHERE id = $id");
 //echo "<div class ='entryWithComment'>";
 while($row = $stm->fetch() ){
-echo "<div class='blogEntries1'> <p id='postId'> Post ID: " . $row['id'] . "</p> <p id='userId'> Publisher ID: " . $row['userId'] . "</p> <h2 id='entryTitle'> " . $row['title'] . '</h2> <p id="enrtyImage"><img src="../includes/' . $row['image'] . '" "height=200 width=300"/></p>' . "<p id='entryMessage'>" . $row['message'] . "</p> <p id='entryCategory'> Category: " . $row['category'] . "</p> <p id='entryPublished'> Published: " . $row['date'] . " </p>" ;
+echo "<div class='blogEntries1'> <p id='postId'> Post ID: " . $row['id'] . "</p> <p id='userId'> Publisher ID: " . $row['userId'] . "</p> <h2 id='entryTitle'> " . $row['title'] . '</h2> <p id="enrtyImage"><img src="../includes/' . $row['image'] . '" "height=200 width=300"/></p>' . "<p id='entryMessage'>" . $row['message'] . "</p> <p id='entryCategory'> Category: " . $row['category'] . "</p> <p id='entryPublished'> Published: " . $row['date'] . " </p>  ";
 
 echo "</div>";
 }
@@ -73,15 +73,17 @@ echo "<div class ='entryWithComment'>";
   
 <?php
 
-$stmt = $db->query("SELECT commentId, postId, userId, message, username, date FROM comments
-                    JOIN users AS u ON comments.commentId = u.id 
+$stmt = $db->query("SELECT commentId, postId, userId, message, username,  date FROM comments
+                    JOIN users as u ON comments.userId = u.Id
                     WHERE postId = $id ORDER BY date DESC");
 
 while($row = $stmt->fetch()) {
-    echo "<div class='comments'> <p id='commentId'> Comment ID: " . $row['commentId'] . "</p> <p id='commentPostId'> Post ID: " . $row['postId'] . "</p><p id='usercomment'> By: " . $row['username'] . "</p><h2 id='commentUserId'> " . $row['userId'] . "</h2><p id='commentMessage'>" . $row['message'] . "</p> <p id='commentDate'> Published: " . $row['date'] . "</p> </div>";
+    
 
   $adminCommentId = $row['commentId'];
   $userCommentId = $row['commentId'];
+
+  echo "<div class='comments'> <p id='commentId'> Comment ID: " . $row['commentId'] . "</p> <p id='commentPostId'> Post ID: " . $row['postId'] . "</p><p id='usercomment'> By: " . $row['username'] . "</p><h2 id='commentUserId'> " . $row['userId'] . "</h2><p id='commentMessage'>" . $row['message'] . "</p> <p id='commentDate'> Published: " . $row['date'] . "</p>";
     
     if (isset($_SESSION['sess_role']) && $_SESSION['sess_role'] == "admin"){ 
 
