@@ -54,7 +54,7 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    background-image: url(../includes/images/BACKGROUND.jpg);
+    background-image: url(../includes/images/background.jpg);
     height: 70vh;
     background-size: cover;
     background-repeat: no-repeat;

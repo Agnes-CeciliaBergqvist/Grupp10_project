@@ -12,9 +12,10 @@ if (isset($_POST["edit_user"])) {
     $title = $_POST["title"];
     $category = $_POST["category"];
     $id = $_POST["id"];
+    $update = date("y-m-d h:i");
 
     //Update to the database with all the input fields
-    $stm = $db->query("UPDATE posts SET message = '$newMessage', title = '$title', category ='$category' WHERE id=$id");
+    $stm = $db->query("UPDATE posts SET message = '$newMessage', title = '$title', category ='$category', updated = '$update' WHERE id=$id");
     
     if($stm->execute()) {
         header("location:../views/viewPosts.php");
