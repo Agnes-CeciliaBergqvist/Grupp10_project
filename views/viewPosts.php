@@ -57,14 +57,14 @@ echo "<h1 id='welcomeMessage'> You are logged in as " . $_SESSION['sess_user_nam
 echo "Filter posts by catergor:";
 ?>
 
-<form action="viewPosts.php" method="GET">
+<form id="form-box" action="viewPosts.php" method="GET">
 <select class="postFields" name="category" id="category">
   <option value="All">Everything</option>  
   <option value="Watches">Watches</option>
   <option value="Sunglasses">Sunglasses</option>
   <option value="Home-interior">Home-interior</option>
 </select></br>
-<input type="submit" value="filter!" name="filterBtn">
+<input  class="submit-btn" type="submit" value="filter!" name="filterBtn">
 </form>
 
 <?php

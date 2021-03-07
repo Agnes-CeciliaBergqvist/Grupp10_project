@@ -576,6 +576,17 @@ p,
     padding: 0.2rem; 
 }
 
+/* Form on viewPost where you can choose category and button */
+#form-box {
+    display: flex;
+    flex-direction: row;
+}
+
+.submit-btn {
+    width: 3rem;
+    height: 2.5rem;
+}
+
 
 /* Media queries start here */
 @media screen and (max-width: 600px) { 
