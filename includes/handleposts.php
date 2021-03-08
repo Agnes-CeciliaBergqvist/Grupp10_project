@@ -26,7 +26,7 @@ if(file_exists($target_file)){
     die;
 }
 // restricting image from beeing to big!
-if($_FILES['chosenImage']['size']>10000000){
+if($_FILES['chosenImage']['size']>1000000){
     echo "The file is to big!";
     die;
 }

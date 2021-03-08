@@ -1,5 +1,7 @@
 # Grupp10_project
 
+This is a simpler blog system that belongs to a company called Millhouse and their main focus is on selling watches, sunglasses and smaller furniture articles. Here a user can log in and comment on the existing posts.
+
 Please run this Sql question in your database editor and then proceed to register on the first page!
 After you have registered you can change the role of the user in the database from user to admin to gain access to more functions like posting a blogg post!
 
