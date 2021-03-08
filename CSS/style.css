@@ -241,11 +241,9 @@
     flex-direction: column;
     justify-content: center;
     align-items:center;
-    border: 0.05vw solid #3c7575;;
-    /* box-shadow: 0.25vw 0.25vw #E3F0F0; */
+    border: 0.05vw solid #3c7575;
     width: 42vw;
     margin-bottom: 4vw;
-    /*margin-left: 10vw;*/
     margin-top: 5vw;
     margin: 2vw;
     background-color: #bed4e624;
@@ -260,11 +258,12 @@
     flex-direction: column;
     justify-content: center;
     align-items:center;
-    border: 0.05vw solid lightgrey;
-    box-shadow: 0.25vw 0.25vw #E3F0F0;
-    width: 65vw;
-    margin-bottom: 1vw;
+    border: 0.05vw solid #3c7575;
+    width: 42vw;
+    margin-bottom: 4vw;
     margin-top: 5vw;
+    margin: 2vw;
+    background-color: #bed4e624;
 }
 
 
