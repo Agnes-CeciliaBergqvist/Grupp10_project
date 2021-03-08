@@ -60,15 +60,7 @@ echo "</div>";
 
 echo "<div class ='entryWithComment'>";
 ?>
-<div class='leaveAComment'> 
-  <form action="../includes/handleComments.php<?php echo"?id=$id";?>" method="POST">
-  <input type="button" name="commentBtn" id="commentBtn" value="Leave a comment" onclick="hide();"></br>
-  <div id="textarea" style="display: none;">
-  <textarea name="comment" id="commentArea" cols="30" rows="10"></textarea></br>
-  <input type="submit" name="publishBtn" id="publishBtn" value="Publish" onsubmit="show();">
-  </div>
-  </form>  
-  </div> </div>
+
   
   <div class="commentBox">
   
@@ -106,6 +98,18 @@ echo "</div>";
 ?>
 
   </div>
+
+  <!-- Input for leave a comment -->
+  <div class='leaveAComment'> 
+  <form action="../includes/handleComments.php<?php echo"?id=$id";?>" method="POST">
+  <input type="button" name="commentBtn" id="commentBtn" value="Leave a comment" onclick="hide();"></br>
+  <div id="textarea" style="display: none;">
+  <textarea name="comment" id="commentArea" cols="30" rows="10"></textarea></br>
+  <input type="submit" name="publishBtn" id="publishBtn" value="Publish" onsubmit="show();">
+  </div>
+  </form>  
+  </div> </div>
+
   <script>
 
 var Btn = document.getElementById("commentBtn"); 
