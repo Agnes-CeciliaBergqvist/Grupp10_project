@@ -49,7 +49,7 @@ $id = $_GET['id'];
 $stm = $db->query("SELECT * FROM posts WHERE id = $id");
 //echo "<div class ='entryWithComment'>";
 while($row = $stm->fetch() ){
-echo "<div class='blogEntries1'> <p id='postId'> Post ID: " . $row['id'] . "</p> <p id='userId'> Publisher ID: " . $row['userId'] . "</p> <h2 id='entryTitle'> " . $row['title'] . '</h2> <p id="enrtyImage"><img src="../includes/' . $row['image'] . '" "height=200 width=300"/></p>' . "<p id='entryMessage'>" . $row['message'] . "</p> <p id='entryCategory'> Category: " . $row['category'] . "</p> <p id='entryPublished'> Published: " . $row['date'] . " </p>  ";
+echo "<div class='blogEntries1'> <p id='postId'> Post ID: " . $row['id'] . "</p> <p id='userId'> Publisher ID: " . $row['userId'] . "</p> <h2 id='entryTitle'> " . $row['title'] . '</h2> <p id="enrtyImage"><img src="../includes/' . $row['image'] . '" style=" height:25vw " "/></p>' . "<p id='entryMessage'>" . $row['message'] . "</p> <p id='entryCategory'> Category: " . $row['category'] . "</p> <p id='entryPublished'> Published: " . $row['date'] . " </p>  ";
 
 if ($row['updated'] != ""){
   echo "Updated: " . $row['updated'];
@@ -60,29 +60,21 @@ echo "</div>";
 
 echo "<div class ='entryWithComment'>";
 ?>
-<div class='leaveAComment'> 
-  <form action="../includes/handleComments.php<?php echo"?id=$id";?>" method="POST">
-  <input type="button" name="commentBtn" id="commentBtn" value="Leave a comment" onclick="hide();"></br>
-  <div id="textarea" style="display: none;">
-  <textarea name="comment" id="commentArea" cols="30" rows="10"></textarea></br>
-  <input type="submit" name="publishBtn" id="publishBtn" value="Publish" onsubmit="show();">
-  </div>
-  </form>  
-  </div> </div>
+
   
   <div class="commentBox">
   
   <h2 class='Headline'>Comments:</h2>
   
 <?php
-
+//fetching information from the database to show comments
 $stmt = $db->query("SELECT commentId, postId, userId, message, username,  date FROM comments
                     JOIN users as u ON comments.userId = u.Id
                     WHERE postId = $id ORDER BY date DESC");
 
 while($row = $stmt->fetch()) {
     
-
+// showing comments and adding deletebuttons which are dependant on weather you are admin or user and weather you have written the comment or somebody else has!
   $adminCommentId = $row['commentId'];
   $userCommentId = $row['commentId'];
 
@@ -94,7 +86,7 @@ while($row = $stmt->fetch()) {
       
     }else if(isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] == $row['userId']){
 
-      echo "<div><a href='../includes/deleteCommet.php?id=$id&userDeleteComment_id=$userCommentId'>Delete</a></div>";
+      echo "<div class='deleteComment'><a href='../includes/deleteCommet.php?id=$id&userDeleteComment_id=$userCommentId'>Delete</a></div>";
       
     }
     
@@ -106,6 +98,20 @@ echo "</div>";
 ?>
 
   </div>
+
+  <!-- Input for leave a comment -->
+  <div class='leaveAComment'> 
+  <form action="../includes/handleComments.php<?php echo"?id=$id";?>" method="POST">
+  <input type="button" name="commentBtn" id="commentBtn" value="Leave a comment" onclick="hide();"></br>
+  <div id="textarea" style="display: none;">
+  <textarea name="comment" id="commentArea" cols="30" rows="10"></textarea></br>
+  <input type="submit" name="publishBtn" id="publishBtn" value="Publish" onsubmit="show();">
+  </div>
+  </form>  
+  </div> </div>
+
+
+<!-- script that hides an inputfield that becomes visable whenever someone wants to leave a comment and presses that button -->
   <script>
 
 var Btn = document.getElementById("commentBtn"); 

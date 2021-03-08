@@ -3,7 +3,7 @@ include("database_connection.php");
 
 
 $msg ="";
-
+    //checking that the email and username that were put in doesnt already exist in the database
    $username = $_POST['username'];
    $email = $_POST['email'];
 
@@ -17,6 +17,7 @@ $msg ="";
    $stmt->execute();
    $returnM = $stmt->fetch();
 
+   // if no match is found the registration procedes and information is sent to the database
    if($return[0] == 0 && $returnM[0] == 0) {
     $username = $_POST['username'];
     $email = $_POST['email'];
@@ -33,6 +34,7 @@ $msg ="";
     $stm->bindParam(':email_IN',$email);
     $stm->bindParam(':password_IN',$krypt_password);
 
+    //Checking that all fields arent empty!
     if($username != "" & $email != "" & $password != ""){
         $stm->execute();
         header("location:../views/login.php");

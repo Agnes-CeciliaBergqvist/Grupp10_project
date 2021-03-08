@@ -56,7 +56,7 @@ if(isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] != "") {
   
   // You are only able to make posts if you are logged in!
   
-
+// Php written html-Form which lets an admin post a blogg post!
   echo '<form class ="makePost" action="../includes/handleposts.php" method="POST" enctype="multipart/form-data">
   <h2 class="newPost" >Make your new blogpost here</h2>
   <label class="postFields" for="title">Title:</label>
