@@ -83,11 +83,12 @@
 
 /* Commets and posts style starts here */
 
-/* #allPosts {
-    display:flex;
-    flex-direction: column;
-    align-items:flex-start;
-} */
+#allPosts {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
 /*Style för login*/
 
@@ -240,12 +241,14 @@
     flex-direction: column;
     justify-content: center;
     align-items:center;
-    border: 0.05vw solid lightgrey;
-    box-shadow: 0.25vw 0.25vw #E3F0F0;
-    width: 65vw;
+    border: 0.05vw solid #3c7575;;
+    /* box-shadow: 0.25vw 0.25vw #E3F0F0; */
+    width: 42vw;
     margin-bottom: 4vw;
     /*margin-left: 10vw;*/
     margin-top: 5vw;
+    margin: 2vw;
+    background-color: #bed4e624;
     
 
 
@@ -468,7 +471,7 @@ margin-bottom: 2vw;
 #entryTitle {
     margin-bottom: 3vw;
     margin-top: 3vw;
-    font-size: 5vw;
+    font-size: 3vw;
 }
 
 #entryMessage {
@@ -572,6 +575,23 @@ p,
 .fab fa-youtube,
 .fab fa-linkedin {
     padding: 0.2rem; 
+}
+
+/* Form on viewPost where you can choose category and button */
+#form-box {
+    display: flex;
+    flex-direction: row;
+}
+
+.submit-btn {
+    width: 3rem;
+    height: 2.5rem;
+}
+
+img.images {
+    height: 200px;
+    width: 200px; 
+     
 }
 
 

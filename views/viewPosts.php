@@ -57,14 +57,14 @@ echo "<h1 id='welcomeMessage'> You are logged in as " . $_SESSION['sess_user_nam
 echo "Filter posts by catergor:";
 ?>
 
-<form action="viewPosts.php" method="GET">
+<form id="form-box" action="viewPosts.php" method="GET">
 <select class="postFields" name="category" id="category">
   <option value="All">Everything</option>  
   <option value="Watches">Watches</option>
   <option value="Sunglasses">Sunglasses</option>
   <option value="Home-interior">Home-interior</option>
 </select></br>
-<input type="submit" value="filter!" name="filterBtn">
+<input  class="submit-btn" type="submit" value="filter!" name="filterBtn">
 </form>
 
 <?php
@@ -92,7 +92,7 @@ echo "<div id='allPosts'>";
 while ($row = $stm->fetch()) {
   $postId = $row['id'];
   
-  echo "<div class ='entryWithComment'> <div class='blogEntries'> <p id='postId'> Post ID: " . $row['id'] . "</p> <p id='userId'> Publisher ID: " . $row['userId'] . "</p> <h2 id='entryTitle'> " . $row['title'] . '</h2> <p id="enrtyImage"><img src="../includes/' . $row['image'] . '" style=" height:40vw " "/></p>' . "<p id='entryMessage'>" . $row['message'] . "</p> <p id='entryCategory'> Category: " . $row['category'] . "</p> <p id='entryPublished'> Published: " . $row['date'] . " </p>  " ;
+  echo "<div class ='entryWithComment'> <div class='blogEntries'> <p id='postId'> Post ID: " . $row['id'] . "</p> <p id='userId'> Publisher ID: " . $row['userId'] . "</p> <h2 id='entryTitle'> " . $row['title'] . '</h2> <p id="enrtyImage"><img class="images" src="../includes/' . $row['image'] . '" style=" height:25vw " "/></p>' . "<p id='entryMessage'>" . $row['message'] . "</p> <p id='entryCategory'> Category: " . $row['category'] . "</p> <p id='entryPublished'> Published: " . $row['date'] . " </p>  " ;
   if ($row['updated'] != ""){
     echo "Updated: " . $row['updated'];
   }
