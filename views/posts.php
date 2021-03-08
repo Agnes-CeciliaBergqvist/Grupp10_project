@@ -61,7 +61,7 @@ if(isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] != "") {
   <h2 class="newPost" >Make your new blogpost here</h2>
   <label class="postFields" for="title">Title:</label>
   <input class="postFields" type="text" name="title"></br>
-  <input class="postFields" type="file" name="chosenImage"/><br />  
+  <input class="choose-img" type="file" name="chosenImage"/><br />  
   <h4 class="postFields">Message</h4>
   <textarea class="postFields" name="message" id="message" cols="50" rows="20"></textarea><br>
   <!--<label for="image">Image:</label>-->

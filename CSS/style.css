@@ -83,6 +83,10 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+.choose-img {
+    margin-left: 10vw;
+    margin-bottom: 1.2vw;
+}
 
 /*Style för login*/
 
@@ -244,7 +248,7 @@
 
 
 }
-
+/*Style fo blog post on specificPost*/ 
 .blogEntries1 {
     font-size: 1vw;
     display:flex;
@@ -623,6 +627,7 @@ img.images {
         height: 200px;
         color: white;
         border-radius: 10px;
+        width: 5rem;
       }
 
     .test {
