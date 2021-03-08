@@ -44,6 +44,7 @@
      
 </header>
 
+<!-- login form -->
 <form name="User" method="POST" action="../includes/handleLogin.php" align="center">
 
 <h3 class="enterLogin" align="center">Enter Login Details</h3>

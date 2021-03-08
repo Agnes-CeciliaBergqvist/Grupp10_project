@@ -1,3 +1,4 @@
+<!-- This is where a user is redirected after login in -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,6 +58,7 @@
 <div class="homepage">
 
 <?php
+// Code that checks if someone is logged in and if that person is an admin and adds functions if thats the case!
 session_start();
 
 if(isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] != "") {

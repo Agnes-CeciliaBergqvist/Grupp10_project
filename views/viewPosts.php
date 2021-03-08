@@ -56,7 +56,7 @@ echo "<h1 id='welcomeMessage'> You are logged in as " . $_SESSION['sess_user_nam
 
 echo "Filter posts by catergor:";
 ?>
-
+<!-- category filter form  -->
 <form id="form-box" action="viewPosts.php" method="GET">
 <select class="postFields" name="category" id="category">
   <option value="All">Everything</option>  

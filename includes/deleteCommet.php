@@ -2,12 +2,11 @@
 session_start();
 include("../includes/database_connection.php");
 
-// removes comment 
+// removes a selected comment 
 
 
 $id = $_GET['id'];
 $delete_comment = $_GET['userDeleteComment_id'];
-
 $userId = $_SESSION['sess_user_id'];
 
 if (isset($_SESSION['sess_role']) && $_SESSION['sess_role'] == "admin"){
