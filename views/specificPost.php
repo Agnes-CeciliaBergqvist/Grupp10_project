@@ -67,14 +67,14 @@ echo "<div class ='entryWithComment'>";
   <h2 class='Headline'>Comments:</h2>
   
 <?php
-
+//fetching information from the database to show comments
 $stmt = $db->query("SELECT commentId, postId, userId, message, username,  date FROM comments
                     JOIN users as u ON comments.userId = u.Id
                     WHERE postId = $id ORDER BY date DESC");
 
 while($row = $stmt->fetch()) {
     
-
+// showing comments and adding deletebuttons which are dependant on weather you are admin or user and weather you have written the comment or somebody else has!
   $adminCommentId = $row['commentId'];
   $userCommentId = $row['commentId'];
 
@@ -110,6 +110,8 @@ echo "</div>";
   </form>  
   </div> </div>
 
+
+<!-- script that hides an inputfield that becomes visable whenever someone wants to leave a comment and presses that button -->
   <script>
 
 var Btn = document.getElementById("commentBtn"); 

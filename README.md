@@ -1,4 +1,9 @@
 # Grupp10_project
+
+Please run this Sql question in your database editor and then proceed to register on the first page!
+After you have registered you can change the role of the user in the database from user to admin to gain access to more functions like posting a blogg post!
+
+
 DROP DATABASE IF EXISTS Millhouse; CREATE DATABASE Millhouse;
 
 DROP TABLE IF EXISTS komPost; DROP TABLE IF EXISTS comments; DROP TABLE IF EXISTS posts; DROP TABLE IF EXISTS users;
@@ -8,6 +13,3 @@ CREATE TABLE users ( id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, username VARCHA
 CREATE TABLE posts ( id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, userId INT NOT NULL, title VARCHAR(50) NOT NULL, image VARCHAR(100),message VARCHAR(2000) NOT NULL, category VARCHAR(50) NOT NULL, date DATETIME NOT NULL, updated DATETIME, CONSTRAINT FK_userId FOREIGN KEY (userid) REFERENCES users(id) ) ENGINE = InnoDB;
 
 CREATE TABLE comments ( commentId INT NOT NULL PRIMARY KEY AUTO_INCREMENT, postId INT NOT NULL, userId INT NOT NULL, date DATETIME NOT NULL, message VARCHAR(100) NOT NULL, CONSTRAINT FK_postId FOREIGN KEY(postId) REFERENCES posts(id), CONSTRAINT FK_user_Id FOREIGN KEY(userId) REFERENCES users(id) ) ENGINE = innoDB;
-
-
-Kommentarer: JS code i php, komPost tabellen, JOINS? kommentarer ska ligga i klasser.
