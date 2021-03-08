@@ -16,7 +16,7 @@
     justify-content: flex-start;
     flex-flow: row wrap; 
     box-shadow: 0.4vw 0.4vw #E3F0F0;
-    width: 30.6rem;
+    width: auto;
 }
 #header-name {
     display: flex;
@@ -27,8 +27,10 @@
 }
 
 #h1 {
-    margin-left: 20rem;
+    margin-left: 6vw;
 }
+
+
 
 #nav-bar a {
     text-decoration: none;
@@ -545,8 +547,11 @@ margin-bottom: 0.5vw;
     flex-direction: row;
     padding-top: 2rem;
     padding-bottom: 2rem;
-    width: 100%;
+    width: auto;
     margin-top: 35rem;
+}
+.footer-container {
+    width: auto; 
 }
 
 #footer-headline {
@@ -557,12 +562,12 @@ margin-bottom: 0.5vw;
     display: flex;
     justify-content: center;
     flex-direction: row;
-    width: 100%;
+    width: auto;
     color: #b7b7b7;
     line-height: 1.5;
     border-top: 1px solid #455867;
     border-bottom: 1px solid #455867;
-    padding: 2rem; 
+
 }
 p,
 .fab fa-instagram-square,
@@ -624,18 +629,52 @@ img.images {
         max-width: 480px;
         margin: auto;
         background-color: #555;
-        height: 200px;
+        height: 27vw;
         color: white;
         border-radius: 10px;
         width: 5rem;
       }
 
     .test {
-        height: 3rem;
+        height: 7vw;
+        width: 10vw;
     }
 
     .hidden {
         display: none;
+    }
+
+}
+@media screen and (min-width: 601px) { 
+    #header-name {
+        display: flex; 
+        flex-direction: row;
+
+
+    }
+    #h1 {
+        margin-left: 6vw;
+        margin-right: 4vw;
+    }
+
+
+}
+
+@media screen and (max-width: 375px) { 
+    .info-company {
+        flex-direction: column;
+    }
+   
+
+}
+@media screen and (min-width: 385px) { 
+    .logoutPosts a {
+        padding-left: 12.5vw;
+    }
+    .logoutPosts {
+        position: absolute;
+        right: 2rem;
+
     }
 
 }
