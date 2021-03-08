@@ -27,24 +27,18 @@
 }
 
 #h1 {
-    margin-left: 3rem;
-}
-
-#nav-bar {
-    padding: 14px 20px;
-
+    margin-left: 20rem;
 }
 
 #nav-bar a {
     text-decoration: none;
-    color: #b7b7b7;
-    padding: 14px 20px;
-    margin-right: 5rem;
-    
+    color: #b7b7b7;    
 }
+
 #nav-bar a.icon {
     display: none;
 }
+
 .fa fa-bars, .nav-bar-b {
     display: none;
 }
@@ -220,8 +214,7 @@
 
 .postFields {
     margin-bottom: 1vw;
-    padding: 0.4vw;
-    font-size: 1.5vw;
+    font-size: 1.3vw;
 }
 
 .PublishPost {
@@ -605,7 +598,6 @@ img.images {
     #nav-bar a {
         display: none;
         color: white; 
-        padding: 14px 16px; 
         display: block; 
     }
 
@@ -653,6 +645,13 @@ img.images {
     h1 {
         margin-left: 5rem;
 }
+}
+
+@media screen and (min-width: 1440px) { 
+
+    .logoutPosts a {
+        padding-left: 36.5vw;
+    }
 }
 
 
