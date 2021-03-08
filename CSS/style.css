@@ -235,6 +235,7 @@
 }
 
 /*Styling för blogginlägg*/
+
 .blogEntries {
     font-size: 1vw;
     display:flex;
@@ -274,6 +275,7 @@
     font-size: 1.5vw;
     margin-bottom: 0.5vw;
     text-decoration: none;
+    
 }
 
 .postLinks a:hover {
@@ -283,9 +285,50 @@
     
 }
 
+.deleteBtn {
+    text-decoration: none;
+    background-color: #EEEEEE;
+    padding: 3px;
+    border: 1px solid grey;
+    width: 7vw;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.editBtn {
+    text-decoration: none;
+    background-color: #EEEEEE;
+    padding: 3px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    width: 7vw;
+    text-align: center;
+    margin-left: 0.8vw;
+
+}
+
+.Btns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 1vw;
+    margin-bottom: 2vw;
+
+}
+
+.updatedPost {
+    margin-bottom: 1vw;
+}
+
+.goToComments {
+    margin-left: 1.5vw;
+    margin-top: 2vw;
+}
+
 #welcomeMessage{
     display:flex;
     justify-content: center;
+    margin-bottom: 1.5vw;
  }
 /*Style för edit-page*/
 
@@ -315,6 +358,7 @@
 }
 
  /* Styling för comment-page */
+
 #CommentPage {
     display: flex;
     justify-content: center;
@@ -334,7 +378,7 @@
     display:flex;
     flex-direction: column;
     justify-content: center;
-    width: 65vw;
+    width: 40vw;
     border: 0.05vw solid lightgrey;
     box-shadow: 0.25vw 0.25vw #E3F0F0;
     margin-top: 2vw;
@@ -347,35 +391,16 @@
     
     
 }
-.deleteBtn {
-    text-decoration: none;
-    background-color: #EEEEEE;
-    padding: 3px;
+
+#commentMessage {
     border: 1px solid grey;
-    width: 7vw;
-    border-radius: 5px;
-    text-align: center;
-}
-
-.editBtn {
-    text-decoration: none;
-    background-color: #EEEEEE;
-    padding: 3px;
-    border: 1px solid grey;
-    border-radius: 5px;
-    width: 7vw;
-    text-align: center;
-    margin-left: 0.8vw;
-
-}
-
-.Btns {
-display: flex;
-flex-direction: row;
-align-items: center;
-margin-top: 1vw;
-margin-bottom: 2vw;
-
+    padding-top: 3vw;
+    padding-bottom: 3vw;
+    margin-top: 1vw;
+    margin-bottom: 1.5vw;
+    width: 70%;
+    margin-left: 5.5vw;
+    overflow-wrap: break-word;
 }
 
 .deleteComment {
@@ -385,7 +410,8 @@ margin-bottom: 2vw;
     border-radius: 5px;
     width: 7vw;
     text-align: center;
-    margin-left: 27vw;
+    margin-left: 15vw;
+    margin-top: 1vw;
     
     
 }
@@ -410,7 +436,6 @@ margin-bottom: 2vw;
     display:flex;
     justify-content: center;
     align-items: center;
-    margin-left: 2vw;
     /*border: 0.20vw solid lightblue;*/
     /*box-shadow: 0.4vw 0.4vw #E3F0F0;*/
     padding: 5vw;
@@ -474,18 +499,18 @@ margin-bottom: 2vw;
 }
 
 #entryMessage {
-    font-size: 1.5vw;
+    font-size: 2vw;
     margin-top: 1vw;
     margin-bottom: 1vw;
 }
 
 #entryCategory {
-    font-size: 1vw;
-    margin-bottom: 1vw;
+    font-size: 1.5vw;
+    margin-bottom: 0.5vw;
 }
 
 #entryPublished {
-    margin-bottom: 2vw;
+    margin-bottom: 0.3vw;
 
 }
 
@@ -580,11 +605,16 @@ p,
 #form-box {
     display: flex;
     flex-direction: row;
+    margin-top: 1vw;
 }
 
 .submit-btn {
-    width: 3rem;
-    height: 2.5rem;
+    width: 3.5rem;
+    height: 2.3rem;
+    margin-left: 0.5vw;
+    border-radius: 2px;
+    border: 1px solid grey;
+    font-size: 1.3vw;
 }
 
 img.images {

@@ -65,7 +65,7 @@ if(isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] != "") {
   echo '<h1 class="Welcome">Welcome '.$_SESSION['sess_user_name'].'!</h1>';
 
   if(isset($_SESSION['sess_role']) && $_SESSION['sess_role'] == "admin") {
-    echo "<p class='InloggedAs'>Du är inloggad som <b>Admin</b></p><br />";
+    echo "<p class='InloggedAs'>You are logged in as <b>Admin</b></p><br />";
 
     echo '<p class="publishsomething">Do you want to publish something? <a href="posts.php">Click here!</a></p> <br>';
   }
@@ -73,7 +73,7 @@ if(isset($_SESSION['sess_user_id']) && $_SESSION['sess_user_id'] != "") {
         
   
 } else { 
-  echo "Vänligen logga in igen <a href='login.php'>login</a>";
+  echo "Please log in again <a href='login.php'>login</a>";
 }
 ?>
    
