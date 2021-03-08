@@ -16,7 +16,7 @@
     justify-content: flex-start;
     flex-flow: row wrap; 
     box-shadow: 0.4vw 0.4vw #E3F0F0;
-    width: 30.6rem;
+    width: auto;
 }
 #header-name {
     display: flex;
@@ -27,24 +27,20 @@
 }
 
 #h1 {
-    margin-left: 3rem;
+    margin-left: 6vw;
 }
 
-#nav-bar {
-    padding: 14px 20px;
 
-}
 
 #nav-bar a {
     text-decoration: none;
-    color: #b7b7b7;
-    padding: 14px 20px;
-    margin-right: 5rem;
-    
+    color: #b7b7b7;    
 }
+
 #nav-bar a.icon {
     display: none;
 }
+
 .fa fa-bars, .nav-bar-b {
     display: none;
 }
@@ -88,6 +84,10 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+}
+.choose-img {
+    margin-left: 10vw;
+    margin-bottom: 1.2vw;
 }
 
 /*Style för login*/
@@ -220,8 +220,7 @@
 
 .postFields {
     margin-bottom: 1vw;
-    padding: 0.4vw;
-    font-size: 1.5vw;
+    font-size: 1.3vw;
 }
 
 .PublishPost {
@@ -252,7 +251,7 @@
 
 
 }
-
+/*Style fo blog post on specificPost*/ 
 .blogEntries1 {
     font-size: 1vw;
     display:flex;
@@ -573,8 +572,11 @@ margin-bottom: 0.5vw;
     flex-direction: row;
     padding-top: 2rem;
     padding-bottom: 2rem;
-    width: 100%;
+    width: auto;
     margin-top: 35rem;
+}
+.footer-container {
+    width: auto; 
 }
 
 #footer-headline {
@@ -585,12 +587,12 @@ margin-bottom: 0.5vw;
     display: flex;
     justify-content: center;
     flex-direction: row;
-    width: 100%;
+    width: auto;
     color: #b7b7b7;
     line-height: 1.5;
     border-top: 1px solid #455867;
     border-bottom: 1px solid #455867;
-    padding: 2rem; 
+
 }
 p,
 .fab fa-instagram-square,
@@ -635,7 +637,6 @@ img.images {
     #nav-bar a {
         display: none;
         color: white; 
-        padding: 14px 16px; 
         display: block; 
     }
 
@@ -658,17 +659,52 @@ img.images {
         max-width: 480px;
         margin: auto;
         background-color: #555;
-        height: 200px;
+        height: 27vw;
         color: white;
         border-radius: 10px;
+        width: 5rem;
       }
 
     .test {
-        height: 3rem;
+        height: 7vw;
+        width: 10vw;
     }
 
     .hidden {
         display: none;
+    }
+
+}
+@media screen and (min-width: 601px) { 
+    #header-name {
+        display: flex; 
+        flex-direction: row;
+
+
+    }
+    #h1 {
+        margin-left: 6vw;
+        margin-right: 4vw;
+    }
+
+
+}
+
+@media screen and (max-width: 375px) { 
+    .info-company {
+        flex-direction: column;
+    }
+   
+
+}
+@media screen and (min-width: 385px) { 
+    .logoutPosts a {
+        padding-left: 12.5vw;
+    }
+    .logoutPosts {
+        position: absolute;
+        right: 2rem;
+
     }
 
 }
@@ -683,6 +719,13 @@ img.images {
     h1 {
         margin-left: 5rem;
 }
+}
+
+@media screen and (min-width: 1440px) { 
+
+    .logoutPosts a {
+        padding-left: 36.5vw;
+    }
 }
 
 
