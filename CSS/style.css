@@ -52,7 +52,7 @@
     flex-direction: column;
     justify-content: center;
     background-image: url(../includes/images/background.jpg);
-    height: 70vh;
+    height: 70vw;
     background-size: cover;
     background-repeat: no-repeat;
     margin-top: -1rem; 
